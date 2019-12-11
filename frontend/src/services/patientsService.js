@@ -1,0 +1,15 @@
+import axios from "axios"
+
+export default class PatientForm {
+    baseUrl="http://localhost:3000"
+    form = axios.create ({
+        baseURL: this.baseUrl,
+        withCredentials: true
+    });
+    getPatient(){
+        return this.form.get("/patients")
+    }
+    createPatient(patientData){
+        return this.form.post("/patients", patientData)
+    }
+} 
