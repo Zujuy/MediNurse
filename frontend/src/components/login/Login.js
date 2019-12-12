@@ -1,53 +1,58 @@
 import React, { Component } from "react";
-import AuthService from "../../services/authService";
-
-const authservice = new AuthService();
+import {StyledForms} from "../../style/components";
+import { MyContext } from '../../context'
 
 export default class Login extends Component {
-  state = {
-    username: "",
-    password: ""
-  };
-
-  login = async e => {
-    e.preventDefault();
-    const { username, password } = this.state;
-    const { data } = await authservice.login({ username, password });
-    localStorage.setItem("user", JSON.stringify(data));
-    alert("log in");
-  };
-
-  inputChange = ({ target: { value, name } }) => {
-    this.setState({
-      ...this.state,
-      [name]: value
-    });
-  };
+  componentDidMount() {
+    console.log(this.context)
+    if (this.context.loggedUser) {
+      console.log(';lol')
+      return this.props.history.push('/profile')
+    }
+  }
 
   render() {
     return (
-      <>
-        <h1>Login</h1>
-        <form onSubmit={this.login}>
+      <MyContext.Consumer>
+        {context => context ? <form
+            onSubmit={e => {
+              context.handleLogin(e, () => {
+                this.props.history.push('/profile')
+              })
+            }}
+            >    
+      <StyledForms>
+        <h2>Login</h2>
+        <form>    
           <label htmlFor="username">Username</label>
           <input
-            onChange={this.inputChange}
-            type="text"
             name="username"
-            id="username"
-            required
-          />
+            prefix={
+              <icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />
+            }
+            placeholder="Email"
+            type="email"
+            value={context.loginForm.username}
+            onChange={e => context.handleInput(e, 'loginForm')}
+            />
+          
+    
           <label htmlFor="password">Password</label>
           <input
-            onChange={this.inputChange}
-            type="password"
             name="password"
-            id="password"
-            required
-          />
+            type="password"
+            prefix={
+              () => <icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />
+            }
+            placeholder="Password"
+            value={context.loginForm.password}
+            onChange={e => context.handleInput(e, 'loginForm')}
+            />
           <button type="submit">Login</button>
-        </form>
-      </>
-    );
+          </form>
+      </StyledForms>
+      </form> : null }
+      </MyContext.Consumer>
+    )}
   }
-}
+

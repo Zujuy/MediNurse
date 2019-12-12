@@ -7,8 +7,8 @@ html, body{
   font-size: 16px;
   width: 100%;
   height: 100%;
-  background-color: #E8E8E8;
-  font-family: 'Roboto'
+  font-family: 'Roboto';
+  background-img: url("/backloginsignup.jpg");
 }
 body{
   position: relative;

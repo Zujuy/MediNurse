@@ -1,13 +1,26 @@
-import axios from "axios";
+import axios from 'axios'
 
-export default class AuthService {
-  baseUrl = "http://localhost:3000";
-  patient = axios.create({
-    baseURL: this.baseUrl,
-    withCredentials: true
-  });
-  login(userData) {
-    return this.patient.post("/auth/login", userData);
+const baseURL = 'https://localhost:3000'
+
+const service = axios.create({
+  baseURL,
+  withCredentials: true
+})
+
+  const AUTH_SERVICE = {
+    signup: data => {
+      return service.post('/signup', data)
+    },
+    login: data => {
+      return service.post('/login', data)
+    },
+    getUser: () => {
+      return service.get('/profile')
+    },
+    logout: () => {
+      return service.get('/logout')
+    }
   }
-}
+  
+  export default AUTH_SERVICE
 
