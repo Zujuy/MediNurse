@@ -58,20 +58,42 @@ export const StyledForms = styled.nav`
   align-items: center;
   background-image:url("../../back.jpg");
   
+  
 }
 
 h2{
   display:flex;
   margin-top: 5%;
   color:#0F75BC;
-  
+  margin-top: 10%;
 }
 
 label{
   color:#0F75BC;
-  
+  padding: 5px;
+}
+
+input{
+  padding: 3px;
+  border: 1px solid #0F75BC;
+}
+
+button{
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 10px 20px;
+  background-color: #0F75BC;
+  color: white;
+
+} 
+
+button:hover {
+  background-color: white;
+  color:  #0F75BC;
+  border: 2px solid #0F75BC;
 }
 `;
+
 
 
 
