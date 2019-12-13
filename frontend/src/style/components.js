@@ -48,24 +48,30 @@ export const StyledNavbar = styled.nav`
 
 // login
 export const StyledForms = styled.nav`
-form{
+.formstyle{
+  width:100vw;
+  height:100vh;
   display:flex;
-  position:fixed;
-  justify-content: space-between;
-  padding: 0 1rem;
-  margin-top: 5%;
-  margin-left: 5%;
-  margin: solid 2px #0F75BC;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-flow:row-wrap;
+  align-items: center;
+  background-image:url("../../back.jpg");
   
 }
 
 h2{
+  display:flex;
+  margin-top: 5%;
   color:#0F75BC;
-  margin-top: 15%;
-  margin-left: 20%;
+  
 }
 
 label{
   color:#0F75BC;
+  
 }
 `;
+
+
+

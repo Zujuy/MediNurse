@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Router from "./Router";
 import GlobalStyles from "./style/GlobalStyles";
+import * as serviceWorker from './serviceWorker'
+import MyProvider from "./context"
+import Router from './Router'
 
 ReactDOM.render(
-  <>
-    <GlobalStyles />
+  <MyProvider>
     <Router />
-  </>,
-  document.getElementById("root")
-);
+    <GlobalStyles/>
+  </MyProvider>,
+  document.getElementById('root')
+)
+
+serviceWorker.register()

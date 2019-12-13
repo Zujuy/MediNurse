@@ -6,9 +6,10 @@ export const MyContext = createContext()
 
 class MyProvider extends Component {
   state = {
+    loggedUser: null,
+    formSignup: {
     name: "String",
     last_name: "String",
-    photo: "String",
     role:"",
     phone: "String",
     hospital: "String",
@@ -17,6 +18,11 @@ class MyProvider extends Component {
     enrollment: "String",
     username: "String",
     password: "String",
+    },
+    loginForm: {
+      username: '',
+      password: ''
+    },
     user: {}
   }
 
@@ -41,7 +47,7 @@ class MyProvider extends Component {
   handleSignup = async e => {
     e.preventDefault()
     const { data } = await AUTH_SERVICE.signup(this.state.formSignup)
-    Swal.fire(`Welcome ${data.user.name}`, 'User created', 'success')
+    Swal.fire(`Welcome ${data.user.name}`, '', 'success')
   }
 
   handleLogin = (e, cb) => {
@@ -52,7 +58,7 @@ class MyProvider extends Component {
         cb()
       })
       .catch(err => {
-        Swal.fire(`Hay un error`, 'error')
+        Swal.fire(`Hay un error`, 'verifica tu información')
       })
   }
 
@@ -62,6 +68,8 @@ class MyProvider extends Component {
     this.setState({ loggedUser: false, user: {} })
     cb()
   }
+
+  
 
   render() {
     console.log(this.state)

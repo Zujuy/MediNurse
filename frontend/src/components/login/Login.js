@@ -4,9 +4,7 @@ import { MyContext } from '../../context'
 
 export default class Login extends Component {
   componentDidMount() {
-    console.log(this.context)
     if (this.context.loggedUser) {
-      console.log(';lol')
       return this.props.history.push('/profile')
     }
   }
@@ -14,7 +12,8 @@ export default class Login extends Component {
   render() {
     return (
       <MyContext.Consumer>
-        {context => context ? <form
+        {context =>(
+        <form
             onSubmit={e => {
               context.handleLogin(e, () => {
                 this.props.history.push('/profile')
@@ -22,37 +21,42 @@ export default class Login extends Component {
             }}
             >    
       <StyledForms>
-        <h2>Login</h2>
-        <form>    
-          <label htmlFor="username">Username</label>
+      <div className="formstyle">
+        <h2>Login</h2>  
+        <div>
+          <label htmlFor="username">Mail de usuario</label>
           <input
             name="username"
-            prefix={
-              <icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />
-            }
-            placeholder="Email"
+            placeholder="Mail de usuario"
             type="email"
             value={context.loginForm.username}
             onChange={e => context.handleInput(e, 'loginForm')}
+            required
             />
-          
-    
+          </div> 
+
+          <div>
           <label htmlFor="password">Password</label>
           <input
             name="password"
             type="password"
-            prefix={
-              () => <icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />
-            }
             placeholder="Password"
             value={context.loginForm.password}
             onChange={e => context.handleInput(e, 'loginForm')}
+            required
             />
+          </div>
+          
+          <div>
           <button type="submit">Login</button>
-          </form>
+          </div>
+
+          </div>
       </StyledForms>
-      </form> : null }
+      </form> 
+      )}
       </MyContext.Consumer>
     )}
   }
 
+  Login.contextType = MyContext
