@@ -10,8 +10,9 @@ function Navbar(props) {
       {context => {
         return (
           <StyledNavbar>
+          <Link to="/home"><img src="../../../logomedinurse.png"></img></Link>
           <ul> 
-          <li><Link to="/"> Home</Link></li>
+          <li><Link to="/home"> Home</Link></li>
           {!context.loggedUser && 
           <li><Link to="/login"> Log in</Link></li>}
           {!context.loggedUser && 

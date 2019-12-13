@@ -14,3 +14,8 @@ ReactDOM.render(
 )
 
 serviceWorker.register()
+
+ReactDOM.render(
+  <Carousel />,
+  document.getElementById('container')
+);

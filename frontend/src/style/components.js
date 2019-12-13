@@ -94,6 +94,10 @@ button:hover {
 }
 `;
 
+//home
 
+export const StyledHome = styled.nav`
 
+ 
 
+`
