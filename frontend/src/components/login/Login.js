@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {StyledForms} from "../../style/components";
+import {StyledForms} from "../../style/Components";
 import { MyContext } from '../../context'
 
 export default class Login extends Component {

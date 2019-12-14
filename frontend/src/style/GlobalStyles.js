@@ -2,15 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 html, body{
-  margin: 0;
+  font-family: "Roboto";
   padding: 0;
-  font-size: 16px;
   width: 100vw;
-  height: 100vh;
-  font-family: 'Roboto';
-  background-img: url("/backloginsignup.jpg");
+  height: 100%;
 }
-
 `;
 
 export default GlobalStyles;

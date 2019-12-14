@@ -1,9 +1,26 @@
 import React, {Component} from "react";
-import {StyledProfile} from "../../style/components";
-import {MyContext} from "../../context";
+import {StyledProfile} from "../../style/Components";
 
-export default function Profile (props){
-    return(<h2>Perfil usuario</h2>)
-        
+export default function Profile (){
+    return(
+    
+    <StyledProfile>
+    <div className="containerprofile">
+    <img src="../../../uniformes-de-enfermera-indumentaria-para-el-cuidado-de-la-salud.jpg"/>
+    <h3>Mariel Blanco</h3>
+    <h5>Role: Jefe de enfermeras</h5>
+    <p>Teléfono: 1526 2374</p>
+    <p>Hospital: Siglo XXI</p>
+    <p>Especialidad: Otorrinolaringología</p>
+    <p>Cédula: 1243579</p>
+    <p>matrícula: 11789300</p>
 
+    <div className="botones">
+    <button>1</button>
+    </div>
+
+    </div>
+    </StyledProfile>
+  
+    )
 }

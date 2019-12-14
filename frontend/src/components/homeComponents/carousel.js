@@ -1,24 +1,24 @@
 import React from "react";
-import ReactDOM from "react-router-dom";
 import {Gallery, GalleryImage} from "react-gesture-gallery"
+import { withRouter } from 'react-router-dom';
 
 const images = [
-    src="carrousel1.jpg",
-    src="carrousel2.jpg",
-    src=""
-
+    "carrousel1.jpeg",
+    "carrousel2.jpg",
+    "carrousel3.jpg",
     
   ];
 
-function App(){
+
+function Carousel(){
     const [index, setIndex] = React.useState(0);
 
     React.useEffect(() => {
         const timer = setInterval(() => {
-            if (index === 3){
+            if (index === 2){
                 setIndex(0);
             } else {
-                setindex(prev => prev + 1);
+                setIndex(prev => prev +1);
             }
         }, 3000);
         return () => clearInterval(timer);
@@ -27,8 +27,10 @@ function App(){
     return (
         <Gallery
             style={{
-                Height: "30vh",
-                width: "100vw"
+                Height: "100px",
+                width: "100vw",
+                padding:0,
+                margin:0,
 
             }}
             index={index}
@@ -37,11 +39,12 @@ function App(){
             }}
             >
             {images.map(image => (
-                <GalleryImage objectFit="contain" key={image} src={image} />
+                <GalleryImage objectFit="contain" key={image} src={image} 
+                />
             ))}
+            
             </Gallery>
     )
 }
 
-const rootElemet = docuement.getElemetById("root");
-ReactDOM.render(<App/>, rootElement)
+export default withRouter(Carousel)

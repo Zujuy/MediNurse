@@ -1,13 +1,14 @@
 import React from "react";
-import {StyledHome} from "../style/components";
-import Slider from 'react-animated-slider';
-import 'react-animated-slider/build/horizontal.css';
+import {StyledHome} from "../style/Components";
+import Carousel from "../components/homeComponents/Carousel";
+
 
 export default function Home (){
     return(
             <StyledHome>
-           <div id="container">
-            <!-- Your component will be rendered here. -->
+            <div className="container">
+            <Carousel/>
+            <h2></h2>
             </div>
             
             </StyledHome>

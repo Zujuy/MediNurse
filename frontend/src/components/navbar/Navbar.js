@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {StyledNavbar} from "../../style/components";
+import {StyledNavbar} from "../../style/Components";
 import { MyContext } from '../../context'
 import { withRouter } from 'react-router-dom'
 
@@ -10,7 +10,7 @@ function Navbar(props) {
       {context => {
         return (
           <StyledNavbar>
-          <Link to="/home"><img src="../../../logomedinurse.png"></img></Link>
+          <Link to="/home"><img src="../../../logoblanco.png"></img></Link>
           <ul> 
           <li><Link to="/home"> Home</Link></li>
           {!context.loggedUser && 
