@@ -4,7 +4,7 @@ exports.createPatient = async (req, res) => {
     const { status, name, last_name, photo, medical_speciality } = req.body;
     
 
-    const userAsigned = await User.find({role: 'Medico'})
+    const userAsigned = await User.find({role: 'Medico, Enfermera'})
   
     const patient = await Patient.create({
         status, 

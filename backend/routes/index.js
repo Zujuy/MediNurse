@@ -10,6 +10,14 @@ const{
   getPatients
 } = require('../controllers/patientController');
 
+const{
+  createUser,
+  getUser,
+  updateUser,
+  deleteUser,
+  getUsers,
+}=require('../controllers/userControllers')
+
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -23,5 +31,11 @@ router.post('/patients', catchErrors(createPatient));
 router.patch('/patients/:id', catchErrors(updatePatient));
 router.delete('/projects/:id', catchErrors(deletePatient))
 
+//User
+router.get('/users', catchErrors(getUsers));
+router.get('/users/:id', catchErrors(getUser));
+router.post('/users', catchErrors(createUser));
+router.patch('/users/:id', catchErrors(updateUser));
+router.delete('/users/:id', catchErrors(deleteUser))
 
-  module.exports = router;
+module.exports = router;
