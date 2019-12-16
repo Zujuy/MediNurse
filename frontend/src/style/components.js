@@ -101,7 +101,7 @@ button:hover {
   color:  ${colors.higlights};
   border: 2px solid ${colors.higlights};
 }
-`;
+`
 
 //home
 
@@ -116,6 +116,8 @@ export const StyledProfile = styled.nav`
 
 
 .containerprofile{
+  position:absolute;
+  z-index:1;
   margin-top:100px;
   width:40%;
   height:80vh;
@@ -155,50 +157,101 @@ p{
   margin:0;
   margin-left:10%
 }
+
+.profileButtons{
+  position:relative;
+  z-index:2;
+  margin-left:60%;
+
+}
+
+button{
+  width:200px;
+  margin-top: 30%;
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 10px 20px;
+  background-color: ${colors.higlights};
+  color: white;
+}
+
+button:hover {
+  background-color: white;
+  color:  ${colors.higlights};
+  border: 2px solid ${colors.higlights};
+}
 `
 
 export const StyledAll = styled.nav`
 .all{
-  ${'' /* flex-wrap:wrap; */}
   padding:0;
   margin-top:100px;
   width:100vw;
   height:100vh;
-  flex-direction:row;
-  border: 2px solid red;
-
-  
-
 }
 .nurses{
+  position:relative;
+  z-index:1;
+  align-items:center;
   flex-direction:column;
-  width:100%; 
+  color: ${colors.higlights};
+  width:50%; 
   height:50vh;
-  border: 2px solid gray;
-  ${'' /* border-right: 2px solid ${colors.higlights}; */}
+  border-right: 2px solid ${colors.decorations};
+  
 }
 
 .doctors{
+  position:relative;
+  z-index:2;
   flex-direction:column;
+  color: ${colors.higlights};
   width:300px;
   height:50%vh;
-  border: 2px solid gray;
-  ${'' /* border-left: 2px solid ${colors.higlights}; */}
+
 }
 
 h2{
+
   width:100px;
   padding:0;
   margin:0;
-  color:${colors.higlights};
 }
 `
 
 export const StyledCard = styled.nav`
 
 .card{
-width:300px;
+width:400px;
+text-align:center;
+border: 2px solid ${colors.decorations};
 }
+.header{
+  justify-content:center;
+  color: ${colors.higlights};
+}
+.body{
+  color:${colors.text};
+}
+
+.cardButton{
+ justify-content:center;
+}
+button{
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 10px 20px;
+  background-color: ${colors.higlights};
+  color: white;
+}
+
+button:hover {
+  background-color: white;
+  color:  ${colors.higlights};
+  border: 2px solid ${colors.higlights};
+}
+
+
 `
 export const Carousel = styled.section`
   height: 45vh;

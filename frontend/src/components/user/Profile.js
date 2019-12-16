@@ -14,12 +14,16 @@ export default function Profile (){
     <p>Especialidad: Otorrinolaringología</p>
     <p>Cédula: 1243579</p>
     <p>matrícula: 11789300</p>
-
-    <div className="botones">
-    <button>1</button>
     </div>
 
+
+    <div className="profileButtons">
+    <button>Ver Enfermeras</button>
+    <br></br>
+    <button>Ver pacientes</button>
     </div>
+
+    
     </StyledProfile>
   
     )
