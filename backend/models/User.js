@@ -8,7 +8,7 @@ const userSchema = new Schema(
       photo: String,
       role:{
 
-        enum: ["Servicio Social", "Asistente médica","Médico","Jefe enfermeros","Enfermeras",]
+        enum: ["Servicio Social", "Asistente medica","Medico","Jefe enfermeros","Enfermeras",]
         
       },
       phone: String,

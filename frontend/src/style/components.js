@@ -159,34 +159,31 @@ p{
 
 export const StyledAll = styled.nav`
 .all{
-  display:flex-container;
-  display-direction:inline;
-  flex-wrap:wrap;
+  ${'' /* flex-wrap:wrap; */}
   padding:0;
-  justify-content:inline;
   margin-top:100px;
-  margin-left:10%;
+  width:100vw;
+  height:100vh;
+  flex-direction:row;
+  border: 2px solid red;
+
+  
 
 }
 .nurses{
-  display:flex-items;
-  flex-direction:row;
-  width:300px;
-  height:100%;
-  margin:0;
-  padding:0;
-  border-right: 2px solid ${colors.higlights};
+  flex-direction:column;
+  width:100%; 
+  height:50vh;
+  border: 2px solid gray;
+  ${'' /* border-right: 2px solid ${colors.higlights}; */}
 }
 
 .doctors{
-  display:flex-items;
-  flex-direction:row;
-  width:40%;
-  height:100%vh;
-  margin:0;
-  margin-left:60%;
-  padding:0;
-  border-left: 2px solid ${colors.higlights};
+  flex-direction:column;
+  width:300px;
+  height:50%vh;
+  border: 2px solid gray;
+  ${'' /* border-left: 2px solid ${colors.higlights}; */}
 }
 
 h2{
@@ -195,5 +192,22 @@ h2{
   margin:0;
   color:${colors.higlights};
 }
-
 `
+
+export const StyledCard = styled.nav`
+
+.card{
+width:300px;
+}
+`
+export const Carousel = styled.section`
+  height: 45vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  }
+`;

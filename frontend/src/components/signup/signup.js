@@ -4,18 +4,11 @@ import { MyContext } from '../../context'
 
 export default function Signup(props) {
 
-    const [statusAct, setStausAct] = useState(false)
-    const [statusNoAct, setStausNoAct] = useState(false)
+  const [role, setRole] = useState('')
 
-    const handleStatusAct = () => {
-        if(statusAct === false) setStausAct(true)
-        if(statusAct === true) setStausAct(false)
-    }
-    const handleStatusNoAct = () => {
-        if(statusNoAct === false) setStausNoAct(true)
-        if(statusNoAct === true) setStausNoAct(false)
-    }
-
+  const handleChange = (event) => {
+    setRole(event.target.value);
+  }
 
   return (
     <MyContext.Consumer>
@@ -50,9 +43,14 @@ export default function Signup(props) {
 
             <div>
             <label htmlFor="role">Role</label>
-            <input
-              // aqui va el select
-            />
+             <select value={role.value} onChange={handleChange}>
+            <option value="Servicio Social">Servicio Social</option>
+            <option value="Asistente medica">Asistente medica</option>
+            <option value="Medico">Medico</option>
+            <option value="Jefe enfermeros">Jefe enfermeros</option>
+            <option value="Enfermeras">Enfermeras</option>
+
+          </select>
             <label htmlFor="phone">Teléfono</label>
             <input
               name="phone"
