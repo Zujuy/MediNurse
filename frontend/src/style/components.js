@@ -184,11 +184,10 @@ button:hover {
 
 export const StyledAll = styled.nav`
 .all{
-  padding:0;
-  margin-top:100px;
-  width:100vw;
-  height:100vh;
+  margin-top:50px;
+
 }
+
 .nurses{
   display:inline-block;
   z-index:1;
@@ -205,16 +204,15 @@ export const StyledAll = styled.nav`
   z-index:2;
   flex-direction:column;
   color: ${colors.higlights};
-  width:300px;
+  width:50%;
   height:50%vh;
 
 }
 
 h2{
+  margin-left:30px;
+  text-align:justify;
 
-  width:100px;
-  padding:0;
-  margin:0;
 }
 `
 
@@ -258,12 +256,40 @@ export const Carousel = styled.section`
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  overflow-x: scroll;
+  overflow-y: scroll;
   padding: 0 2rem;
   box-sizing: border-box;
   }
 `
-
 export const StyledNurse = styled.section`
 
+`
+
+export const StyledPatients = styled.section`
+
+.allpatients{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  height:50%vh;
+}
+h2{
+  color:${colors.higlights};
+  margin-top:70px;
+  margin-left:30px;
+  display:inline-block;
+  z-index:1;
+}
+
+.card{
+  display:inline-block;
+  z-index:2;
+  width:250px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+ 
 `

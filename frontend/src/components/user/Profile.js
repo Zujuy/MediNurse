@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {StyledProfile, StyledNurse} from "../../style/Components";
+import {StyledProfile, StyledNurse, Carousel} from "../../style/Components";
 
 export default function Profile (){
     return(
@@ -36,9 +36,12 @@ export default function Profile (){
     <button>Ver pacientes</button>
     </div>
 
-
+{/* esta es la parte derecha delperfil de enfermeras */}
     <div className="NurseSeeing">
         <StyledNurse>
+        <Carousel>
+
+        </Carousel>
 
         </StyledNurse>
     </div>

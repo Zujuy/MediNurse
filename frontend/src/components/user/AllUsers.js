@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import {StyledAll, StyledCard} from "../../style/Components";
+import {StyledAll, StyledCard, Carousel} from "../../style/Components";
 import Cards from "../../components/organicComponents/Cards";
-import {Carousel} from "../../style/Components"
+
 
 export default function Allusers(){
     return(

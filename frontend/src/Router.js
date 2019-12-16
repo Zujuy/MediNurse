@@ -6,6 +6,7 @@ import Signup from './components/signup/Signup';
 import Login from './components/login/Login';
 import Profile from './components/user/Profile';
 import AllUsers from "./components/user/AllUsers";
+import AllPatients from "./components/patient/AllPatients";
 
 const Router = () => (
   <BrowserRouter>
@@ -17,6 +18,7 @@ const Router = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/profile" component={Profile}/>
       <Route exact path="/allusers" component ={AllUsers}/>
+      <Route escat path="/allpatients" component ={AllPatients}/>
 
     </Switch>
   </BrowserRouter>
