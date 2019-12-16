@@ -190,19 +190,18 @@ export const StyledAll = styled.nav`
   height:100vh;
 }
 .nurses{
-  position:relative;
+  display:inline-block;
   z-index:1;
-  align-items:center;
+  align-text:center;
   flex-direction:column;
   color: ${colors.higlights};
   width:50%; 
   height:50vh;
-  border-right: 2px solid ${colors.decorations};
   
 }
 
 .doctors{
-  position:relative;
+  display:inline-block;
   z-index:2;
   flex-direction:column;
   color: ${colors.higlights};
@@ -254,7 +253,7 @@ button:hover {
 
 `
 export const Carousel = styled.section`
-  height: 45vh;
+  height:70vh;
   width: 100vw;
   display: flex;
   flex-wrap: nowrap;
@@ -263,4 +262,8 @@ export const Carousel = styled.section`
   padding: 0 2rem;
   box-sizing: border-box;
   }
-`;
+`
+
+export const StyledNurse = styled.section`
+
+`

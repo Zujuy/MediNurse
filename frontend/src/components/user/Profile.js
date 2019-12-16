@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {StyledProfile} from "../../style/Components";
+import {StyledProfile, StyledNurse} from "../../style/Components";
 
 export default function Profile (){
     return(
@@ -18,9 +18,29 @@ export default function Profile (){
 
 
     <div className="profileButtons">
+    <button>ver todos los usuarios</button> {/*esto dirige al la vista allusers aparece en perfil solo de servicio social  */}
+
+    {/*estos botones solo son para perfil Asistente medica */}
+    <button>Dar de alta paciente</button> 
+    <br></br>
+    <button>Crear cita médica</button>
+
+    {/*estos botones solo son para perfil medico */}
+    <button>Crear expediente médico</button>
+    <br></br>
+    <button>Ver historial pacientes</button>
+    
+    {/* estos botones solo son para perfil jefe de enfermeras */}
     <button>Ver Enfermeras</button>
     <br></br>
     <button>Ver pacientes</button>
+    </div>
+
+
+    <div className="NurseSeeing">
+        <StyledNurse>
+
+        </StyledNurse>
     </div>
 
     
