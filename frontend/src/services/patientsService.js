@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export default class PatientForm {
+export default class PatientService {
     baseUrl="http://localhost:3000"
     form = axios.create ({
         baseURL: this.baseUrl,

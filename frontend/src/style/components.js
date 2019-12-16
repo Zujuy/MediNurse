@@ -10,6 +10,7 @@ export const colors={
 
 //Navbar
 export const StyledNavbar = styled.nav`
+  z-index:5;
   width: 100vw;
   height: 60px;
   family-font: "Roboto";
@@ -127,7 +128,7 @@ export const StyledProfile = styled.nav`
 img{
   margin-left:50px;
   padding: 10px;
-  width:300px;
+  width:70%;
   border: 2px solid ${colors.higlights};
 }
 

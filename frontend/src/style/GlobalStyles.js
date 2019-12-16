@@ -10,8 +10,7 @@ html, body{
 }
 
 body{
-  position: relative;
-  margin-top: 80px;
+  position: absolute;
 }
 `;
 

@@ -17,6 +17,8 @@ function Navbar(props) {
           <li><Link to="/login"> Log in</Link></li>}
           {!context.loggedUser && 
           <li><Link to="/signup"> Sign up</Link></li>}
+          {context.loggedUser &&
+          <li><link to="profile">Profile</link></li>}
           {context.loggedUser && ( <span onClick={() =>
                   context.handleLogout(() => {
                     props.history.push('/login')

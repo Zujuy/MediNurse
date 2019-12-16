@@ -9,7 +9,7 @@ import AllUsers from "./components/user/AllUsers";
 import AllPatients from "./components/patient/AllPatients";
 import AllNurses from "./components/user/AllNurses";
 import PatientsAsigned from "./components/user/PatientsAsigned";
-// import Patientform from "./components/patient/Patientform";
+import Patientform from "./components/patient/Patientform";
 const Router = () => (
   <BrowserRouter>
     <Navbar />
@@ -23,7 +23,7 @@ const Router = () => (
       <Route exact path="/allpatients" component ={AllPatients}/>
       <Route exact path="/allnurses" component ={AllNurses}/>
       <Route exact path="/patientsAsigned" component ={PatientsAsigned}/>
-      {/* <Route exact path="/patientform" component ={Patientform}/> */}
+      <Route exact path="/patientform" component ={Patientform}/>
     </Switch>
   </BrowserRouter>
 );

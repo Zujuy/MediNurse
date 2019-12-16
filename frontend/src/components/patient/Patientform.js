@@ -1,16 +1,40 @@
 import React , {useState}from 'react'
 import {StyledForms} from "../../style/Components";
+import {MyContext} from "../../context";
 
 export default function PatientForm(props) {
 
-  const [role, setRole] = useState('')
+    const [statusAct, setStausAct] = useState(false)
+    const [statusNoAct, setStausNoAct] = useState(false)
 
-  const handleChange = (event) => {
-    setRole(event.target.value);
-  }
+    const handleStatusAct = () => {
+        if(statusAct === false) setStausAct(true)
+        if(statusAct === true) setStausAct(false)
+    }
+    const handleStatusNoAct = () => {
+        if(statusNoAct === false) setStausNoAct(true)
+        if(statusNoAct === true) setStausNoAct(false)
+    }
 
   return (
-      <form>  
+      <MyContext.Consumer>
+      {context => (
+      <form  
+        onSubmit={e => {
+            context.handleCreatePatient(e)
+            props.history.push('/profile')
+        }}
+
+        onChange={e => {
+            context.handleFile(e)
+            props.history.push('/profile')
+        }}
+
+        onClick={e => {
+            context.handleSubmit(e)
+            props.histroy.push('/profile')
+        }}
+        >
         <StyledForms>
         <div className="formstyle">
         <h2>expediente médico</h2>
@@ -20,96 +44,150 @@ export default function PatientForm(props) {
               name="name"
               placeholder="Nombre"
               type="text"
-              value={}
-              onChange={}
+              value={context.patientForm.name}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
             <label htmlFor="last_name">Apellido</label>
             <input
               name="last_name"
               placeholder="Apellido"
               type="text"
-              value={context.formSignup.last_name}
-              onChange={}
+              value={context.patientForm.last_name}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
             </div> 
 
             <div>
-            <label htmlFor="role">Role</label>
-             <select value={role.value} onChange={handleChange}>
-            <option value="Servicio Social">Servicio Social</option>
-            <option value="Asistente medica">Asistente medica</option>
-            <option value="Medico">Medico</option>
-            <option value="Jefe enfermeros">Jefe enfermeros</option>
-            <option value="Enfermeras">Enfermeras</option>
-
-          </select>
-            <label htmlFor="phone">Teléfono</label>
+            <label htmlFor="photo"></label>
+            <div className="photo">
+                <input onChange={this.handleFile} type="file" name="photo" />
+                <input onClick={this.handleSubmit} type="submit" value="Send photo" />
+            </div>
+            <label htmlFor="diagnostic">Diagnóstico</label>
             <input
-              name="phone"
-              placeholder="Teléfono"
+              name="diagnostic"
+              placeholder="Diagnóstico"
               type="text"
-              value={}
-              onChange={}
+              value={context.patientForm.diagnostic}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
             </div>
 
             <div>
-            <label htmlFor="hospital">Hospital</label>
+            <label htmlFor="labs">Laboratorios</label>
             <input
-              name="hospital"
-              placeholder="Hospital"
+              name="Laboratorios"
+              placeholder="labs"
               type="text"
-              value={}
-              onChange={}
+              value={context.patientForm.labs}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
-            <label htmlFor="speciality">Especialidad</label>
+            <label htmlFor="medical_speciality">Especialidad Médica</label>
             <input
-              name="speciality"
+              name="medical_speciality"
               placeholder="Especialidad"
               type="text"
-              value={}
-              onChange={}
+              value={context.patientForm.medical_speciality}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
             </div>
 
             <div>
-            <label htmlFor="identification_card">Cédula</label>
+            <label htmlFor="age">Edad</label>
             <input
-              name="identification_card"
-              placeholder="Cédula"
+              name="age"
+              placeholder="Edad"
               type="text"
-              value={}
-              onChange={}
+              value={context.patientForm.age}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
-            <label htmlFor="enrollment">Matrícula</label>
+            <label htmlFor="address">Dirección</label>
             <input
-              name="enrollment"
-              placeholder="Matrícula"
+              name="address"
+              placeholder="Dirección"
               type="text"
-              value={}
-              onChange={}
+              value={context.patientForm.address}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
             </div>
 
             <div>
-            <label htmlFor="username">Mail de usuario</label>
+            <label htmlFor="contact">Familiar de contacto</label>
             <input
-              name="username"
-              placeholder="Mail de usuario"
+              name="contact"
+              placeholder="Familiar de contacto"
               type="text"
-              value={}
-              onChange={}
+              value={context.patientForm.contact}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="social_security">Número de Seguro Social</label>
             <input
-              name="password"
-              placeholder="Contraseña"
-              type="password"
-              value={}
-              onChange={}
+              name="social_security"
+              placeholder="Número de SS"
+              type="social_security"
+              value={context.patientForm.social_security}
+              onChange={e => context.handleInput(e, 'patientForm')}
             />
             </div>
+            <label htmlFor="blood_type">Tipo de sangre</label>
+            <input
+              name="blood_type"
+              placeholder="Familiar de contacto"
+              type="text"
+              value={context.patientForm.blood_type}
+              onChange={e => context.handleInput(e, 'patientForm')}
+            />
+            <label htmlFor="gender">Genero</label>
+            <input
+              name="gender"
+              placeholder="Género"
+              type="gender"
+              value={context.patientForm.gender}
+              onChange={e => context.handleInput(e, 'patientForm')}
+            />
+            <div>
 
+            </div>
+            <label htmlFor="alergies">Alergias</label>
+            <input
+              name="alergies"
+              placeholder="Alergias"
+              type="text"
+              value={context.patientForm.alergies}
+              onChange={e => context.handleInput(e, 'patientForm')}
+            />
+            <label htmlFor="weight">Peso</label>
+            <input
+              name="weight"
+              placeholder="Peso"
+              type="weight"
+              value={context.patientForm.weight}
+              onChange={e => context.handleInput(e, 'patientForm')}
+            />
+            <div>
+
+            </div>
+            <label htmlFor="height">Estatura</label>
+            <input
+              name="height"
+              placeholder="Estatura"
+              type="text"
+              value={context.patientForm.height}
+              onChange={e => context.handleInput(e, 'patientForm')}
+            />
+            <label htmlFor="weight">Peso</label>
+            <input
+              name="weight"
+              placeholder="Peso"
+              type="weight"
+              value={context.patientForm.weight}
+              onChange={e => context.handleInput(e, 'patientForm')}
+            />
+            <div>
+
+            {/* aqui deberia ir el userAsigned */}
+
+            </div>
             <div>
             <button type="submit">Sign Up</button>
             </div>
@@ -117,5 +195,6 @@ export default function PatientForm(props) {
             </div>
         </StyledForms>
         </form>
-      )
-    }
+      )}
+     </MyContext.Consumer>
+  )};

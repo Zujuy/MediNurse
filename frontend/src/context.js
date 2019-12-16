@@ -1,31 +1,54 @@
 import React, { Component, createContext } from 'react'
 import AUTH_SERVICE from './services/AuthService'
 import Swal from 'sweetalert2'
+import PatientService from './services/patientsService'
+import axios from 'axios'
 
 export const MyContext = createContext()
 
 class MyProvider extends Component {
   state = {
     loggedUser: null,
+
     formSignup: {
-    name: "String",
-    last_name: "String",
-    role:"",
-    phone: "String",
-    hospital: "String",
-    especiality: "String",
-    identification_card: "String",
-    enrollment: "String",
-    username: "String",
-    password: "String",
+    name: '',
+    last_name: '',
+    role: '',
+    phone: '',
+    hospital: '',
+    especiality: '',
+    identification_card: '',
+    enrollment: '',
+    username: '',
+    password: '',
     },
+
     loginForm: {
       username: '',
       password: ''
     },
-    user: {}
+    user: {},
 
-    
+    patientForm: {
+      status:'',
+      name: '',
+      last_name: '',
+      photo:'',
+      diagnostic: '',
+      labs: '',
+      medical_speciality: '',
+      age: '',
+      address: '',
+      contact: '',
+    //   appointment: appointmentSchema.Types.ID,
+      social_security:'',
+      blood_type: '',
+      gender: '',
+      alergies: '',
+      weight: '',
+      height: '',
+      userAsigned: ''
+    },
   }
 
   componentDidMount() {
@@ -71,7 +94,26 @@ class MyProvider extends Component {
     cb()
   }
 
-  
+  handleCreatePatient = async e =>{
+    e.preventDefault()
+    const {data} = await PatientService.createPatient(this.state.patientForm)
+    Swal.fire(`Patient ${data.user.name} created`, '', 'success')
+  }
+
+  handleFile = e => {
+    this.setState({ file: e.target.files[0] })
+  }
+
+  handleSubmit = async e => {
+    e.preventDefault()
+    const formData = new FormData()
+    for (let key in this.state.fakeData) {
+      formData.append(key, this.state.fakeData[key])
+    }
+    formData.append('photo', this.state.file)
+    const { data } = await axios.post('http://localhost:3000/upload', formData)
+    console.log(data)
+  }
 
   render() {
     console.log(this.state)
@@ -84,7 +126,12 @@ class MyProvider extends Component {
           handleInput: this.handleInput,
           handleSignup: this.handleSignup,
           handleLogin: this.handleLogin,
-          handleLogout: this.handleLogout
+          handleLogout: this.handleLogout,
+          patientForm: this.state.patientForm,
+          handleCreatePatient: this.handleCreatePatient,
+          handleFile: this.handleFile,
+          handleSubmit: this.handleSubmit,
+
         }}
       >
         {this.props.children}

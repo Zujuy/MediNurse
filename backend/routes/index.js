@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const catchErrors = require("../middlewares/catchErrors");
+const upload = require('../cloudinary/cloudinary');
 
 const{
   createPatient,
@@ -37,5 +38,15 @@ router.get('/users/:id', catchErrors(getUser));
 router.post('/users', catchErrors(createUser));
 router.patch('/users/:id', catchErrors(updateUser));
 router.delete('/users/:id', catchErrors(deleteUser))
+
+//upload photos
+router.get('/', (req, res, next) => {
+  res.render('index')
+})
+
+router.post('/upload', upload.single('photo'), (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3001')
+  res.status(201).json({ file: req.file, data: { ...req.body } })
+})
 
 module.exports = router;
