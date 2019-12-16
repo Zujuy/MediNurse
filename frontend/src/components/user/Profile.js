@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import {StyledProfile, StyledNurse, Carousel} from "../../style/Components";
+import {StyledProfile, StyledNurse, Carousel, StyledCard} from "../../style/Components";
+import PatientCards from "../patient/PatientCards";
 
 export default function Profile (){
     return(
@@ -18,34 +19,25 @@ export default function Profile (){
 
 
     <div className="profileButtons">
-    <button>ver todos los usuarios</button> {/*esto dirige al la vista allusers aparece en perfil solo de servicio social  */}
+    <button>ver todos los usuarios</button> {/*esto dirige al componente "allusers" aparece en perfil solo de servicio social  */}
 
     {/*estos botones solo son para perfil Asistente medica */}
-    <button>Dar de alta paciente</button> 
+    <button>Dar de alta paciente</button>  {/*linkeado a formulario alta paciente */}
     <br></br>
-    <button>Crear cita médica</button>
+    <button>Crear cita médica</button> {/*linkeado a formulario calendario */}
 
     {/*estos botones solo son para perfil medico */}
-    <button>Crear expediente médico</button>
+    <button>Crear expediente médico</button> {/*linkeado a formulario componente "Patientform" */}
     <br></br>
-    <button>Ver historial pacientes</button>
+    <button>Ver historial pacientes</button> {/*linkeado a solo los pacientes relacionados al ID del medico  componente "PatientsAsigned"*/}
     
     {/* estos botones solo son para perfil jefe de enfermeras */}
-    <button>Ver Enfermeras</button>
+    <button>Ver Enfermeras</button> {/*linkeado a all nurses con el id de esa jefa de enfermeras componente "AllNurses"*/}
     <br></br>
-    <button>Ver pacientes</button>
+    <button>Ver pacientes</button> {/*linkeado a solo los pacientes relacionados al ID del jefa de enfermeras componente "PatientsAsigned" */}
     </div>
 
-{/* esta es la parte derecha delperfil de enfermeras */}
-    <div className="NurseSeeing">
-        <StyledNurse>
-        <Carousel>
-
-        </Carousel>
-
-        </StyledNurse>
-    </div>
-
+    {/* AQUI FALTA LA VISTA DE EL PERFIL DE ENFERMERAS DEL LADO DERECHO */}
     
     </StyledProfile>
   

@@ -261,9 +261,6 @@ export const Carousel = styled.section`
   box-sizing: border-box;
   }
 `
-export const StyledNurse = styled.section`
-
-`
 
 export const StyledPatients = styled.section`
 
@@ -291,5 +288,32 @@ h2{
   justify-content: space-between;
   padding: 5px 10px;
 }
- 
+`
+
+export const StyledJustNurses = styled.section`
+
+.allnurses{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  height:50%vh;
+}
+h2{
+  color:${colors.higlights};
+  margin-top:70px;
+  margin-left:30px;
+  display:inline-block;
+  z-index:1;
+}
+
+.card{
+  display:inline-block;
+  z-index:2;
+  width:250px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
 `

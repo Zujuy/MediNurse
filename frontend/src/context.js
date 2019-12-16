@@ -24,6 +24,8 @@ class MyProvider extends Component {
       password: ''
     },
     user: {}
+
+    
   }
 
   componentDidMount() {

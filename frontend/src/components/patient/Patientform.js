@@ -1,127 +1,121 @@
-import React, {Component} from "react";
-import PatientsService from "../../services/patientsService";
+import React , {useState}from 'react'
+import {StyledForms} from "../../style/Components";
 
-const patientsService= new PatientsService();
+export default function PatientForm(props) {
 
-export default class AddPatient extends Component {
+  const [role, setRole] = useState('')
 
-    state ={
-        status:"",
-        name: "",
-        last_name: "",
-        photo: "",
-        diagnostic: "",
-        labs: "",
-        medical_speciality: "",
-        age: "",
-        address: "",
-        contact: "",
-        appointment: "",
-        social_security: "",
-        blood_type: "",
-        gender: "",
-        alergies: "",
-        weight: "",
-        height: "",
-        userAsigned: ""
-    };
+  const handleChange = (event) => {
+    setRole(event.target.value);
+  }
 
-    inputChange = ({target, 
-                    status, 
-                    name, 
-                    last_name, 
-                    photo, 
-                    diagnostic,
-                    labs, 
-                    medical_speciality, 
-                    age, 
-                    address,
-                    contact,
-                    appointment,
-                    social_security,
-                    blood_type,
-                    gender,
-                    alergies,
-                    weight,
-                    height,
-                    userAsigned,}) => {
-        this.setState({
-            ...this.state,
-            [name]: value
-        });
-        };
+  return (
+      <form>  
+        <StyledForms>
+        <div className="formstyle">
+        <h2>expediente médico</h2>
+        <div> 
+          <label htmlFor="name">Nombre</label>
+          <input
+              name="name"
+              placeholder="Nombre"
+              type="text"
+              value={}
+              onChange={}
+            />
+            <label htmlFor="last_name">Apellido</label>
+            <input
+              name="last_name"
+              placeholder="Apellido"
+              type="text"
+              value={context.formSignup.last_name}
+              onChange={}
+            />
+            </div> 
 
-    addPatient = async e => {
-        e.preventDefault();
-        const {target, 
-            status, 
-            name, 
-            last_name, 
-            photo, 
-            diagnostic,
-            labs, 
-            medical_speciality, 
-            age, 
-            address,
-            contact,
-            appointment,
-            social_security,
-            blood_type,
-            gender,
-            alergies,
-            weight,
-            height,
-            userAsigned,} = this.state;
-        const Patient = await patientsService.createPatient({
-            target, 
-            status, 
-            name, 
-            last_name, 
-            photo, 
-            diagnostic,
-            labs, 
-            medical_speciality, 
-            age, 
-            address,
-            contact,
-            appointment,
-            social_security,
-            blood_type,
-            gender,
-            alergies,
-            weight,
-            height,
-            userAsigned
-        });
-        alert("Paciente creado");
-        this.setState({
-            status:"",
-            name: "",
-            last_name: "",
-            photo: "",
-            diagnostic: "",
-            labs: "",
-            medical_speciality: "",
-            age: "",
-            address: "",
-            contact: "",
-            appointment: "",
-            social_security: "",
-            blood_type: "",
-            gender: "",
-            alergies: "",
-            weight: "",
-            height: "",
-            userAsigned: ""
-        });
+            <div>
+            <label htmlFor="role">Role</label>
+             <select value={role.value} onChange={handleChange}>
+            <option value="Servicio Social">Servicio Social</option>
+            <option value="Asistente medica">Asistente medica</option>
+            <option value="Medico">Medico</option>
+            <option value="Jefe enfermeros">Jefe enfermeros</option>
+            <option value="Enfermeras">Enfermeras</option>
 
-        Button.propTypes = {
-            variant: PropTypes
-              .oneOf([ 'active', 'no active'])
-              .isRequired,
-          };
-    };
+          </select>
+            <label htmlFor="phone">Teléfono</label>
+            <input
+              name="phone"
+              placeholder="Teléfono"
+              type="text"
+              value={}
+              onChange={}
+            />
+            </div>
 
-    render(){
+            <div>
+            <label htmlFor="hospital">Hospital</label>
+            <input
+              name="hospital"
+              placeholder="Hospital"
+              type="text"
+              value={}
+              onChange={}
+            />
+            <label htmlFor="speciality">Especialidad</label>
+            <input
+              name="speciality"
+              placeholder="Especialidad"
+              type="text"
+              value={}
+              onChange={}
+            />
+            </div>
+
+            <div>
+            <label htmlFor="identification_card">Cédula</label>
+            <input
+              name="identification_card"
+              placeholder="Cédula"
+              type="text"
+              value={}
+              onChange={}
+            />
+            <label htmlFor="enrollment">Matrícula</label>
+            <input
+              name="enrollment"
+              placeholder="Matrícula"
+              type="text"
+              value={}
+              onChange={}
+            />
+            </div>
+
+            <div>
+            <label htmlFor="username">Mail de usuario</label>
+            <input
+              name="username"
+              placeholder="Mail de usuario"
+              type="text"
+              value={}
+              onChange={}
+            />
+            <label htmlFor="password">Contraseña</label>
+            <input
+              name="password"
+              placeholder="Contraseña"
+              type="password"
+              value={}
+              onChange={}
+            />
+            </div>
+
+            <div>
+            <button type="submit">Sign Up</button>
+            </div>
+
+            </div>
+        </StyledForms>
+        </form>
+      )
     }
-}

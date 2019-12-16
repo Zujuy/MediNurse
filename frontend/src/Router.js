@@ -7,7 +7,9 @@ import Login from './components/login/Login';
 import Profile from './components/user/Profile';
 import AllUsers from "./components/user/AllUsers";
 import AllPatients from "./components/patient/AllPatients";
-
+import AllNurses from "./components/user/AllNurses";
+import PatientsAsigned from "./components/user/PatientsAsigned";
+// import Patientform from "./components/patient/Patientform";
 const Router = () => (
   <BrowserRouter>
     <Navbar />
@@ -18,8 +20,10 @@ const Router = () => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/profile" component={Profile}/>
       <Route exact path="/allusers" component ={AllUsers}/>
-      <Route escat path="/allpatients" component ={AllPatients}/>
-
+      <Route exact path="/allpatients" component ={AllPatients}/>
+      <Route exact path="/allnurses" component ={AllNurses}/>
+      <Route exact path="/patientsAsigned" component ={PatientsAsigned}/>
+      {/* <Route exact path="/patientform" component ={Patientform}/> */}
     </Switch>
   </BrowserRouter>
 );
