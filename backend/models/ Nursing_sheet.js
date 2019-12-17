@@ -18,11 +18,12 @@ const nursingSchema = new Schema(
         shift: {
             enum: ["Night", "Morning", "Afternoon"]
         },
+        time: String,
+        bed: String,
         heart_rate: String,
         temperature: String,
         breathing_frequency: String,
-        time: String,
-        bed: String,
+        
     },
     
   )

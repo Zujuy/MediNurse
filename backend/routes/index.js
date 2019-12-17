@@ -7,7 +7,6 @@ const{
   createPatient,
   getPatient,
   updatePatient,
-  deletePatient,
   getPatients
 } = require('../controllers/patientController');
 
@@ -15,7 +14,6 @@ const{
   createUser,
   getUser,
   updateUser,
-  deleteUser,
   getUsers,
 }=require('../controllers/userControllers')
 
@@ -30,14 +28,12 @@ router.get('/patients', catchErrors(getPatients));
 router.get('/patients/:id', catchErrors(getPatient));
 router.post('/patients', catchErrors(createPatient));
 router.patch('/patients/:id', catchErrors(updatePatient));
-router.delete('/projects/:id', catchErrors(deletePatient))
 
 //User
 router.get('/users', catchErrors(getUsers));
 router.get('/users/:id', catchErrors(getUser));
 router.post('/users', catchErrors(createUser));
 router.patch('/users/:id', catchErrors(updateUser));
-router.delete('/users/:id', catchErrors(deleteUser))
 
 //upload photos
 router.get('/', (req, res, next) => {

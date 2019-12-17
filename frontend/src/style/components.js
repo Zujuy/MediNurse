@@ -60,15 +60,24 @@ export const StyledForms = styled.nav`
 
 .formstyle{
   width:100vw;
-  height:100vh;
   display:flex;
+  text-align: left;
   justify-content: space-around;
   flex-direction: column;
   flex-flow:row-wrap;
   align-items: center;
-  background-image:url("../../back.jpg");
-  
-  
+  box-sizing: border-box;
+  background-image:url("../../back.jpg"); 
+  padding:15px;
+  label {
+    margin: 10px 0;
+  }
+  input {
+    padding: 14px;
+    border:solid 2px ${colors.higlights};
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
 }
 
 h2{
@@ -106,14 +115,14 @@ button:hover {
 
 //home
 
-export const StyledHome = styled.nav`
+export const StyledHome = styled.section`
 
  .container{
    margin-top: 80px; 
  }
 `
 
-export const StyledProfile = styled.nav`
+export const StyledProfile = styled.section`
 
 
 .containerprofile{
@@ -316,5 +325,82 @@ h2{
   flex-direction: column;
   justify-content: space-between;
   padding: 5px 10px;
+}
+`
+export const StyledPatientprofile = styled.section`
+
+.containerprofile{
+  position:absolute;
+  z-index:1;
+  margin-top:100px;
+  width:40%;
+  height:100vh;
+  border-right: 2px solid ${colors.decorations};
+}
+.containerinfo{
+  position:absolute;
+  z-index:2;
+  margin-top:100px;
+  margin-left:50%;
+  width:40%;
+  height:100%;
+}
+
+img{
+  margin-left:50px;
+  padding: 10px;
+  width:70%;
+  border: 2px solid ${colors.higlights};
+}
+
+h3{
+  family-font:"Roboto";
+  color:${colors.higlights};
+  font-size:40px;
+  padding:0;
+  margin:0;
+  margin-left:10%;
+}
+
+h5{
+  padding:0;
+  family-font:"Roboto";
+  color:${colors.higlights};
+  font-size:15px;
+  margin:0;
+  margin-left:10%
+}
+
+
+.profileButtons{
+  position:relative;
+  z-index:2;
+  margin-left:60%;
+
+}
+
+button{
+  width:200px;
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 10px 20px;
+  background-color: ${colors.higlights};
+  color: white;
+  margin-left:40%;
+}
+
+button:hover {
+  background-color: white;
+  color:  ${colors.higlights};
+  border: 2px solid ${colors.higlights};
+}
+
+li{
+  padding:0;
+  family-font:"Roboto";
+  color:${colors.text};
+  font-size:15px;
+  margin:0;
+  margin-left:10%
 }
 `

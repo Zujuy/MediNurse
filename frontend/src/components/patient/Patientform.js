@@ -25,32 +25,27 @@ export default function PatientForm(props) {
             props.history.push('/profile')
         }}
 
-        onChange={e => {
-            context.handleFile(e)
-            props.history.push('/profile')
-        }}
-
-        onClick={e => {
-            context.handleSubmit(e)
-            props.histroy.push('/profile')
-        }}
         >
         <StyledForms>
         <div className="formstyle">
-        <h2>expediente médico</h2>
-        <div> 
-          <label htmlFor="name">Nombre</label>
-          <input
+        <h2>Expediente Médico</h2>
+
+            <div> 
+            <label htmlFor="name">Nombre/s</label>
+            <input
               name="name"
-              placeholder="Nombre"
+              placeholder="Nombre(s)"
               type="text"
               value={context.patientForm.name}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
-            <label htmlFor="last_name">Apellido</label>
+            </div>
+
+            <div>
+            <label htmlFor="last_name">Apellidos</label>
             <input
               name="last_name"
-              placeholder="Apellido"
+              placeholder="Apellidos"
               type="text"
               value={context.patientForm.last_name}
               onChange={e => context.handleInput(e, 'patientForm')}
@@ -58,11 +53,13 @@ export default function PatientForm(props) {
             </div> 
 
             <div>
-            <label htmlFor="photo"></label>
+            <label htmlFor="photo">Foto del paciente</label>
             <div className="photo">
-                <input onChange={this.handleFile} type="file" name="photo" />
-                <input onClick={this.handleSubmit} type="submit" value="Send photo" />
+                <input onChange={context.handleFile} type="file" name="photo" />
+             
             </div>
+
+            <div>
             <label htmlFor="diagnostic">Diagnóstico</label>
             <input
               name="diagnostic"
@@ -82,6 +79,9 @@ export default function PatientForm(props) {
               value={context.patientForm.labs}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
+            </div>
+
+            <div>
             <label htmlFor="medical_speciality">Especialidad Médica</label>
             <input
               name="medical_speciality"
@@ -101,6 +101,9 @@ export default function PatientForm(props) {
               value={context.patientForm.age}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
+            </div>
+
+            <div>
             <label htmlFor="address">Dirección</label>
             <input
               name="address"
@@ -120,6 +123,9 @@ export default function PatientForm(props) {
               value={context.patientForm.contact}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
+            </div>
+
+            <div>
             <label htmlFor="social_security">Número de Seguro Social</label>
             <input
               name="social_security"
@@ -129,6 +135,8 @@ export default function PatientForm(props) {
               onChange={e => context.handleInput(e, 'patientForm')}
             />
             </div>
+
+            <div>
             <label htmlFor="blood_type">Tipo de sangre</label>
             <input
               name="blood_type"
@@ -137,6 +145,9 @@ export default function PatientForm(props) {
               value={context.patientForm.blood_type}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
+            </div>
+
+            <div>
             <label htmlFor="gender">Genero</label>
             <input
               name="gender"
@@ -145,9 +156,9 @@ export default function PatientForm(props) {
               value={context.patientForm.gender}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
-            <div>
-
             </div>
+           
+           <div>
             <label htmlFor="alergies">Alergias</label>
             <input
               name="alergies"
@@ -156,6 +167,9 @@ export default function PatientForm(props) {
               value={context.patientForm.alergies}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
+            </div>
+
+            <div>
             <label htmlFor="weight">Peso</label>
             <input
               name="weight"
@@ -164,9 +178,9 @@ export default function PatientForm(props) {
               value={context.patientForm.weight}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
-            <div>
-
             </div>
+
+            <div>
             <label htmlFor="height">Estatura</label>
             <input
               name="height"
@@ -175,6 +189,9 @@ export default function PatientForm(props) {
               value={context.patientForm.height}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
+            </div>
+
+            <div>
             <label htmlFor="weight">Peso</label>
             <input
               name="weight"
@@ -183,15 +200,35 @@ export default function PatientForm(props) {
               value={context.patientForm.weight}
               onChange={e => context.handleInput(e, 'patientForm')}
             />
+            </div>
+        
             <div>
-
-            {/* aqui deberia ir el userAsigned */}
+            <label htmlFor="role">Role</label>
+            <label>Activo</label>
+             <input
+              type="radio"
+              name="role" 
+              checked={statusAct}
+              value={context.patientForm.role}
+              onClick={handleStatusAct}
+            />
+             <label>No activo</label>
+             <input
+              type="radio"
+              name="role"
+              checked={statusNoAct}
+              value={context.patientForm.role}
+              onClick={handleStatusNoAct}
+            />
 
             </div>
+
+          
             <div>
-            <button type="submit">Sign Up</button>
+            <button type="submit">Crear</button>
             </div>
 
+            </div>
             </div>
         </StyledForms>
         </form>
