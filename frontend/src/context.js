@@ -40,6 +40,7 @@ class MyProvider extends Component {
       age: '',
       address: '',
       contact: '',
+      phone:'',
     //   appointment: appointmentSchema.Types.ID,
       social_security:'',
       blood_type: '',

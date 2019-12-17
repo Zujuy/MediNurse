@@ -12,4 +12,7 @@ export default class PatientService {
     createPatient(patientData){
         return this.form.post("/patients", patientData)
     }
+    updatePatient(patientData){
+        return this.form.patch("/patients", patientData)
+    }
 } 

@@ -70,8 +70,3 @@ exports.updateUser = async (req, res) => {
         res.status(200).json(user);
     };
 
-    exports.deleteUser = async (req, res)=>{
-        const { id } = req.params;
-        await User.findByIdAndDelete(id);
-        res.status(200).jason({mesaje:"Usuario eliminado"})
-    }

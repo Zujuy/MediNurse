@@ -11,6 +11,7 @@ import AllNurses from "./components/user/AllNurses";
 import PatientsAsigned from "./components/user/PatientsAsigned";
 import Patientform from "./components/patient/Patientform";
 import PatientProfile from "./components/patient/PatientProfile";
+import NurseSheetForm from "./components/patient/NurseSheetForm";
 const Router = () => (
   <BrowserRouter>
     <Navbar />
@@ -26,6 +27,7 @@ const Router = () => (
       <Route exact path="/patientsAsigned" component ={PatientsAsigned}/>
       <Route exact path="/patientform" component ={Patientform}/>
       <Route exact path="/patientprofile" component ={PatientProfile}/>
+      <Route exact path="/nursesheetform" component ={NurseSheetForm}/>
     </Switch>
   </BrowserRouter>
 );

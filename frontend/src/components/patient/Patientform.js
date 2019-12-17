@@ -126,6 +126,17 @@ export default function PatientForm(props) {
             </div>
 
             <div>
+            <label htmlFor="phone">Teléfono de contacto</label>
+            <input
+              name="phone"
+              placeholder="eléfono de contacto<"
+              type="text"
+              value={context.patientForm.phone}
+              onChange={e => context.handleInput(e, 'patientForm')}
+            />
+            </div>
+
+            <div>
             <label htmlFor="social_security">Número de Seguro Social</label>
             <input
               name="social_security"
@@ -140,7 +151,7 @@ export default function PatientForm(props) {
             <label htmlFor="blood_type">Tipo de sangre</label>
             <input
               name="blood_type"
-              placeholder="Familiar de contacto"
+              placeholder="Tipo de sangre"
               type="text"
               value={context.patientForm.blood_type}
               onChange={e => context.handleInput(e, 'patientForm')}

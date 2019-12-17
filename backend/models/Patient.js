@@ -13,6 +13,7 @@ const patientSchema = new Schema(
       age: String,
       address: String,
       contact: String,
+      phone: String,
     //   appointment: appointmentSchema.Types.ID,
       social_security:String,
       blood_type: String,
