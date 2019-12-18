@@ -7,7 +7,6 @@ import Router from './Router';
 import './index.css';
 
 
-
 ReactDOM.render(
   <MyProvider>
     <Router />

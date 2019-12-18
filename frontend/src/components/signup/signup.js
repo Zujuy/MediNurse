@@ -3,13 +3,6 @@ import {StyledForms} from "../../style/Components";
 import { MyContext } from '../../context'
 
 export default function Signup(props) {
-
-  const [role, setRole] = useState('')
-
-  const handleChange = (event) => {
-    setRole(event.target.value);
-  }
-
   return (
     <MyContext.Consumer>
       {context => (
@@ -23,18 +16,18 @@ export default function Signup(props) {
         <div className="formstyle">
         <h2>Sign Up</h2>
         <div> 
-          <label htmlFor="name">Nombre</label>
+          <label htmlFor="name">Nombre/s</label>
           <input
               name="name"
-              placeholder="Nombre"
+              placeholder="Nombre/s"
               type="text"
               value={context.formSignup.name}
               onChange={e => context.handleInput(e, 'formSignup')}
             />
-            <label htmlFor="last_name">Apellido</label>
+            <label htmlFor="last_name">Apellidos</label>
             <input
               name="last_name"
-              placeholder="Apellido"
+              placeholder="Apellidos"
               type="text"
               value={context.formSignup.last_name}
               onChange={e => context.handleInput(e, 'formSignup')}
@@ -43,7 +36,7 @@ export default function Signup(props) {
 
             <div>
             <label htmlFor="role">Role</label>
-             <select value={role.value} onChange={handleChange}>
+            <select value={context.formSignup.role} name="role" onChange={e => context.handleInput(e, 'formSignup')}>
             <option value="Servicio Social">Servicio Social</option>
             <option value="Asistente medica">Asistente medica</option>
             <option value="Medico">Medico</option>

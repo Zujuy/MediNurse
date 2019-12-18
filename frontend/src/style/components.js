@@ -404,3 +404,23 @@ li{
   margin-left:10%
 }
 `
+export const StyledSheet =  styled.section`
+  max-width:600px;
+  margin: 0 auto;
+
+  
+  form{
+    max-width:50%,
+    margin:0 auto;
+  }
+
+  h1{
+    color:  ${colors.higlights};
+    text-align: center;
+  }
+
+  .form{
+    max-width: 40%;
+    margin:0 auto;
+  }
+`

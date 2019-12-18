@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {StyledProfile, StyledNurse, Carousel, StyledCard} from "../../style/Components";
-import PatientCards from "../patient/PatientCards";
 import {Link} from "react-router-dom";
+
 
 export default function Profile (){
     return(

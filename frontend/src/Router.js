@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { StateMachineProvider, createStore } from "little-state-machine";
+
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/Home";
 import Signup from './components/signup/Signup';
@@ -11,7 +13,12 @@ import AllNurses from "./components/user/AllNurses";
 import PatientsAsigned from "./components/user/PatientsAsigned";
 import Patientform from "./components/patient/Patientform";
 import PatientProfile from "./components/patient/PatientProfile";
-import NurseSheetForm from "./components/patient/NurseSheetForm";
+// import PatientData from "./components/organicComponents/NurseSheetForm/PatientData";
+// import MedicalData from "./components/organicComponents/NurseSheetForm/MedicalData";
+// import MedicalScales from "./components/organicComponents/NurseSheetForm/MedicalScales";
+// import FunctionalPatterns from "./components/organicComponents/NurseSheetForm/FunctionalPatterns";
+
+
 const Router = () => (
   <BrowserRouter>
     <Navbar />
@@ -27,7 +34,14 @@ const Router = () => (
       <Route exact path="/patientsAsigned" component ={PatientsAsigned}/>
       <Route exact path="/patientform" component ={Patientform}/>
       <Route exact path="/patientprofile" component ={PatientProfile}/>
-      <Route exact path="/nursesheetform" component ={NurseSheetForm}/>
+      {/* <Route exact path="/patientdata" component ={PatientData}/>
+      <Route exact path="/medicaldata" component ={MedicalData}/>
+      <Route exact path="/medicalsacales" component ={MedicalScales}/>
+      <Route exact path="/functionalpatterns" component ={FunctionalPatterns}/> */}
+
+      
+
+      
     </Switch>
   </BrowserRouter>
 );

@@ -1,9 +1,9 @@
 import React , {useState}from 'react'
-import {StyledForms} from "../../style/Components";
+import {StyledSheet} from "../../style/Components";
 
 export default function NurseSheetForm(props){
     return (
-        <StyledForms>
+        <StyledSheet>
             <div className="formstyle">
                 <h2>Hoja de enfermería</h2>
 
@@ -137,10 +137,71 @@ export default function NurseSheetForm(props){
                     />
                 </div>
 
-                >
+                <div>
+                <label htmlFor="ketones">Cetonas</label>
+                    <input
+                        name="ketines"
+                        placeholder="Cetonas"
+                        type="text"
+                    />  
+                <label htmlFor="proteins">Proteinas</label>
+                    <input
+                        name="proteins"
+                        placeholder="Proteinas"
+                        type="text"
+                    />
+                <label htmlFor="blood">Sangre</label>
+                    <input
+                        name="blood"
+                        placeholder="Sangre"
+                        type="text"
+                    />
+                </div>
+
+                <div>
+                <label htmlFor="density">Densidad</label>
+                    <input
+                        name="density"
+                        placeholder="Densidad"
+                        type="text"
+                    />  
+                <label htmlFor="solution_name">Nombre de la solución</label>
+                    <input
+                        name="solution_name"
+                        placeholder="Nombre de la solución"
+                        type="text"
+                    />   
+                <label htmlFor="solution_time">Hora de aplicación de solución</label>
+                    <input
+                        name="solution_time"
+                        placeholder="Hora de aplicación de solución"
+                        type="text"
+                    /> 
+                </div>
+
+                <div>
+                <label htmlFor="medicine_name">Nombre de la medicamento</label>
+                    <input
+                        name="medicine_name"
+                        placeholder="Nombre del medicamento"
+                        type="text"
+                    />  
+                <label htmlFor="medicines_time">Hora de la medicamento</label>
+                    <input
+                        name="medicines_time"
+                        placeholder="Hora del medicamento"
+                        type="text"
+                    /> 
+                <label htmlFor="medicine_name">Nombre de la medicamento</label>
+                    <input
+                        name="medicine_name"
+                        placeholder="Nombre del medicamento"
+                        type="text"
+                    /> 
+                </div>
         
             </div>
 
-        </StyledForms>
+        </StyledSheet>
     )
 }
