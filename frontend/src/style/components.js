@@ -69,44 +69,54 @@ export const StyledNavbar = styled.nav`
 
 // login
 export const StyledForms = styled.nav`
+width:100vw;
+height:100vh;
+background-image:url("../../back.jpg");
+display:flex;
+flex-direction: column;
+align-items: center;
 
-.formstyle{
-  width:100vw;
-  display:flex;
-  text-align: left;
-  justify-content: space-around;
-  flex-direction: column;
-  flex-flow:row-wrap;
-  align-items: center;
-  box-sizing: border-box;
-  background-image:url("../../back.jpg"); 
-  padding:15px;
-  label {
-    margin: 10px 0;
-  }
-  input {
-    padding: 14px;
-    border:solid 2px ${colors.higlights};
-    margin-bottom: 5px;
-    border-radius: 10px;
-  }
+.formstyle > div{
+  display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding:5px;
 }
 
 h2{
   display:flex;
   margin-top: 5%;
   color:${colors.higlights};
-  margin-top: 10%;
+  margin-top:100px;
+}
+
+form{
+  max-width:50%;
+  margin:0 auto;
 }
 
 label{
-  color:${colors.higlights};
-  padding: 5px;
+  color:${colors.text}
 }
 
 input{
-  padding: 3px;
-  border: 1px solid ${colors.higlights};
+  width:600px;
+  padding: 14px;
+  border:solid 2px ${colors.higlights};
+  margin-bottom: 5px;
+  border-radius: 10px;
+  font-size:14px;
+  color:${colors.text}
+}
+
+select{
+  width:600px;
+  padding: 18px;
+  border:solid 2px ${colors.higlights};
+  margin-bottom: 5px;
+  border-radius: 10px;
+  font-size:14px;
+  color:${colors.text}
 }
 
 button{
@@ -417,6 +427,9 @@ li{
 }
 `
 export const StyledSheet =  styled.form`
+width:100%;
+height:100%;
+margin-top:100px;
 display:flex;
 flex-direction: column;
 align-items: center;
@@ -441,7 +454,6 @@ align-items: center;
   h1{
     color:  ${colors.higlights};
     text-align: center;
-    margin-top:70px;
   }
 
   p{

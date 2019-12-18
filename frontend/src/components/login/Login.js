@@ -21,8 +21,8 @@ export default class Login extends Component {
             }}
           >
             <StyledForms>
+            <h2>Login</h2>
               <div className="formstyle">
-                <h2>Login</h2>
                 <div>
                   <label htmlFor="email">Mail de usuario</label>
                   <input

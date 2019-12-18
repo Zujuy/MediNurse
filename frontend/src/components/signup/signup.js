@@ -13,8 +13,8 @@ export default function Signup(props) {
           }}
         >
           <StyledForms>
+          <h2>Registro</h2>
             <div className="formstyle">
-              <h2>Sign Up</h2>
               <div>
                 <label htmlFor="name">Nombre/s</label>
                 <input
@@ -24,6 +24,9 @@ export default function Signup(props) {
                   value={context.formSignup.name}
                   onChange={e => context.handleInput(e, 'formSignup')}
                 />
+              </div>
+
+              <div>
                 <label htmlFor="last_name">Apellidos</label>
                 <input
                   name="last_name"
@@ -47,6 +50,9 @@ export default function Signup(props) {
                   <option value="Jefe enfermeros">Jefe enfermeros</option>
                   <option value="Enfermeras">Enfermeras</option>
                 </select>
+                </div>
+
+              <div>
                 <label htmlFor="phone">Teléfono</label>
                 <input
                   name="phone"
@@ -66,6 +72,9 @@ export default function Signup(props) {
                   value={context.formSignup.hospital}
                   onChange={e => context.handleInput(e, 'formSignup')}
                 />
+              </div>
+
+              <div>
                 <label htmlFor="speciality">Especialidad</label>
                 <input
                   name="speciality"
@@ -85,6 +94,9 @@ export default function Signup(props) {
                   value={context.formSignup.identification_card}
                   onChange={e => context.handleInput(e, 'formSignup')}
                 />
+              </div>
+
+              <div>
                 <label htmlFor="enrollment">Matrícula</label>
                 <input
                   name="enrollment"
@@ -104,6 +116,9 @@ export default function Signup(props) {
                   value={context.formSignup.username}
                   onChange={e => context.handleInput(e, 'formSignup')}
                 />
+              </div>
+
+              <div>
                 <label htmlFor="password">Contraseña</label>
                 <input
                   name="password"
@@ -113,11 +128,12 @@ export default function Signup(props) {
                   onChange={e => context.handleInput(e, 'formSignup')}
                 />
               </div>
-
               <div>
-                <button type="submit">Sign Up</button>
+                <button type="submit">Registrarse</button>
               </div>
-            </div>
+              </div>
+              
+            
           </StyledForms>
         </form>
       )}
