@@ -432,7 +432,7 @@ li{
 export const StyledSheet =  styled.form`
 width:100%;
 height:100%;
-margin-top:100px;
+margin-top:50px;
 display:flex;
 flex-direction: column;
 align-items: center;
@@ -455,12 +455,12 @@ align-items: center;
   }
 
   h1{
-    color:  ${colors.higlights};
+    color:${colors.higlights};
     text-align: center;
   }
 
   p{
-    color:  ${colors.higlights};
+    color:${colors.higlights};
     text-align: center;
   }
 
@@ -468,7 +468,6 @@ align-items: center;
     width:600px;
     padding: 14px;
     border:solid 2px ${colors.higlights};
-    margin-bottom: 5px;
     border-radius: 10px;
     font-size:14px;
     color:${colors.text}

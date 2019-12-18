@@ -167,7 +167,6 @@ export default class NurseSheetForm extends Component {
           type="button" onClick={this._prev}>
         Atras
         </button>
-        <br></br>
         </StyledSheet>
       )
     }
@@ -184,7 +183,6 @@ export default class NurseSheetForm extends Component {
           type="button" onClick={this._next}>
         Siguiente
         </button>  
-        <br></br> 
         </StyledSheet>     
       )
     }
@@ -329,19 +327,18 @@ export default class NurseSheetForm extends Component {
           />
         </div>
         <div>
-        <label htmlFor="bed">Cama</label>
+        <label htmlFor="bed">No. de cama</label>
         <input
           className="form-control"
           id="bed"
           name="bed"
           type="text"
-          placeholder="bed"
+          placeholder="No. de Cama"
           value={props.bed}
           onChange={props.handleChange}
           />
         </div>
       </div>
-      <br></br>
       </StyledSheet>
     );
   }
@@ -373,8 +370,8 @@ export default class NurseSheetForm extends Component {
           id="temperature"
           name="temperature"
           type="text"
-          placeholder="temperature"
-          value={props.heart_rate}
+          placeholder="Temperatura"
+          value={props.temperature}
           onChange={props.handleChange}
           />
         </div>
@@ -385,7 +382,7 @@ export default class NurseSheetForm extends Component {
           id="breathing_frequency"
           name="breathing_frequency"
           type="text"
-          placeholder="frecuencia respiratoria"
+          placeholder="Frecuencia respiratoria"
           value={props.breathing_frequency}
           onChange={props.handleChange}
           />
@@ -427,7 +424,6 @@ export default class NurseSheetForm extends Component {
           />
         </div>
       </div>
-      <br></br>
       </StyledSheet>
     );
   }
@@ -445,7 +441,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="glasgow"
           name="glasgow"
-          type="glasgow"
+          type="text"
           placeholder="Glasgow"
           value={props.glasgow}
           onChange={props.handleChange}
@@ -457,7 +453,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="ramsay"
           name="ramsay"
-          type="ramsay"
+          type="text"
           placeholder="Ramsay"
           value={props.ramsay}
           onChange={props.handleChange}
@@ -469,7 +465,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="visual_scale"
           name="visual_scale"
-          type="visual_scale"
+          type="text"
           placeholder="Escala Visual Análoga /EVA"
           value={props.visual_scale}
           onChange={props.handleChange}
@@ -481,14 +477,13 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="risk_falls"
           name="risk_falls"
-          type="risk_falls"
+          type="text"
           placeholder="Riesgo de caidas"
           value={props.risk_falls}
           onChange={props.handleChange}
           />   
         </div>
       </div>
-      <br></br>
       </StyledSheet>
     );
   }
@@ -506,7 +501,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="ph"
           name="ph"
-          type="ph"
+          type="text"
           placeholder="pH"
           value={props.ph}
           onChange={props.handleChange}
@@ -518,7 +513,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="glucose"
           name="glucose"
-          type="glucose"
+          type="text"
           placeholder="Glucosa"
           value={props.glucose}
           onChange={props.handleChange}
@@ -530,7 +525,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="ketones"
           name="ketones"
-          type="ketones"
+          type="text"
           placeholder="Cetonas"
           value={props.ketones}
           onChange={props.handleChange}
@@ -542,7 +537,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="proteins"
           name="proteins"
-          type="proteins"
+          type="text"
           placeholder="Proteinas"
           value={props.proteins}
           onChange={props.handleChange}
@@ -554,26 +549,25 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="blood"
           name="blood"
-          type="blood"
-          placeholder="Sangres"
+          type="text"
+          placeholder="Sangre"
           value={props.blood}
           onChange={props.handleChange}
           /> 
         </div> 
         <div>
-        <label htmlFor="density">density</label>
+        <label htmlFor="density">Dencidad</label>
         <input
           className="form-control"
           id="density"
           name="density"
-          type="density"
+          type="text"
           placeholder="Dencidad"
           value={props.density}
           onChange={props.handleChange}
           /> 
         </div>
       </div>
-      <br></br>
       </StyledSheet>
     );
   }
@@ -591,7 +585,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="solution_name"
           name="solution_name"
-          type="solution_name"
+          type="text"
           placeholder="Nombre de la solución"
           value={props.solution_name}
           onChange={props.handleChange}
@@ -603,7 +597,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="solutions_time"
           name="solutions_time"
-          type="solutions_time"
+          type="time"
           placeholder="Hora de administración"
           value={props.solutions_time}
           onChange={props.handleChange}
@@ -615,7 +609,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="medicine_name"
           name="medicine_name"
-          type="medicine_name"
+          type="text"
           placeholder="Nombre del medicamento"
           value={props.medicine_name}
           onChange={props.handleChange}
@@ -627,7 +621,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="medicines_time"
           name="medicines_time"
-          type="medicines_time"
+          type="time"
           placeholder="Hora de administración"
           value={props.medicines_time}
           onChange={props.handleChange}
@@ -639,7 +633,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="food_name"
           name="food_name"
-          type="food_name"
+          type="text"
           placeholder="Comida administrada"
           value={props.food_name}
           onChange={props.handleChange}
@@ -651,7 +645,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="intake_time"
           name="intake_time"
-          type="intake_time"
+          type="time"
           placeholder="Hora de ingesta"
           value={props.intake_time}
           onChange={props.handleChange}
@@ -663,7 +657,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="drug_name"
           name="drug_name"
-          type="drug_name"
+          type="text"
           placeholder="Nombre del medicamento"
           value={props.drug_name}
           onChange={props.handleChange}
@@ -675,7 +669,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="presentation"
           name="presentation"
-          type="presentation"
+          type="text"
           placeholder="Presentación del medicamento"
           value={props.presentation}
           onChange={props.handleChange}
@@ -687,7 +681,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="via"
           name="via"
-          type="via"
+          type="text"
           placeholder="Vía"
           value={props.via}
           onChange={props.handleChange}
@@ -699,7 +693,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="dose"
           name="dose"
-          type="dose"
+          type="text"
           placeholder="Dosis"
           value={props.intake_time}
           onChange={props.handleChange}
@@ -711,7 +705,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="presence"
           name="presence"
-          type="presence"
+          type="text"
           placeholder="Presencia"
           value={props.presence}
           onChange={props.handleChange}
@@ -723,14 +717,13 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="schedule"
           name="schedule"
-          type="schedule"
+          type="text"
           placeholder="Horarios"
           value={props.schedule}
           onChange={props.handleChange}
           />
         </div> 
       </div>
-      <br></br>
       </StyledSheet>
     );
   }
@@ -749,7 +742,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="assessment"
           name="assessment"
-          type="assessment"
+          type="text"
           placeholder="Valoraciones"
           value={props.assessment}
           onChange={props.handleChange}
@@ -761,7 +754,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="diagnostic"
           name="diagnostic"
-          type="diagnostic"
+          type="text"
           placeholder="Diagnostico"
           value={props.diagnostic}
           onChange={props.handleChange}
@@ -773,7 +766,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="interventions"
           name="interventions"
-          type="interventions"
+          type="text"
           placeholder="Intervenciones"
           value={props.interventions}
           onChange={props.handleChange}
@@ -785,7 +778,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="response"
           name="response"
-          type="response"
+          type="text"
           placeholder="Respuesta-Evolución"
           value={props.response}
           onChange={props.handleChange}
@@ -797,7 +790,7 @@ export default class NurseSheetForm extends Component {
           className="form-control"
           id="observations"
           name="observations"
-          type="observations"
+          type="text"
           placeholder="Observaciones"
           value={props.observations}
           onChange={props.handleChange}
@@ -805,7 +798,6 @@ export default class NurseSheetForm extends Component {
         </div>   
       </div>
       <button className="btn btn-success btn-block">Enviar</button>
-      <br></br>
       </StyledSheet>
       </React.Fragment>
     );
