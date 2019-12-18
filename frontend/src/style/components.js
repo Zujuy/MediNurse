@@ -146,7 +146,6 @@ export const StyledHome = styled.section`
 
 export const StyledProfile = styled.section`
 
-
 .containerprofile{
   position:absolute;
   z-index:1;
@@ -190,28 +189,32 @@ p{
   margin-left:10%
 }
 
-.profileButtons{
-  position:relative;
+.profilelinks{
+  position:absolute;
   z-index:2;
-  margin-left:60%;
-
+  width:40%;
+  margin-top:100px;
+  margin-left:50%;
 }
 
-button{
-  width:200px;
-  margin-top: 30%;
-  font-size: 12px;
-  border-radius: 12px;
+
+h4{
+  font-size: 20px;
   padding: 10px 20px;
-  background-color: ${colors.higlights};
-  color: white;
+  color:${colors.light};
+  background-color:${colors.higlights};
+  text-align:center;
+  display:space-between;
+  border: solid 2px ${colors.higlights};
 }
 
-button:hover {
-  background-color: white;
-  color:  ${colors.higlights};
-  border: 2px solid ${colors.higlights};
+h4:hover{
+  color:${colors.higlights};
+  background-color:${colors.light};
+  border: solid 2px ${colors.higlights};
 }
+
+
 `
 
 export const StyledAll = styled.nav`

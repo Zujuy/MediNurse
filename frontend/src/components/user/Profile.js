@@ -34,30 +34,40 @@ export default class Profile extends Component {
                 <p>matrícula: {this.state.currentUser.enrollment}</p>
               </div>
 
-              <div className="profileButtons">
-                <button>ver todos los usuarios</button>
-                {/*esto dirige al componente "allusers" aparece en perfil solo de servicio social  */}
-                {/*estos botones solo son para perfil Asistente medica */}
-                <button>Dar de alta paciente</button>
-                {/*linkeado a formulario alta paciente */}
+              <div className="profilelinks">
+                {this.state.currentUser.role==="Servicio Social" && (
+                <Link style={{ textDecoration: 'none' }} to="/allusers"><h4>ver todos los usuarios</h4></Link>
+                )}
+                
+                {this.state.currentUser.role==="Asistente medica" && (
+                <Link style={{ textDecoration: 'none' }} to="/patientform">Dar de alta paciente</Link>
+                )}
                 <br></br>
-                <button>Crear cita médica</button>
-                {/*linkeado a formulario calendario */}
-                {/*estos botones solo son para perfil medico */}
-                <button>Crear expediente médico</button>
-                {/*linkeado a formulario componente "Patientform" */}
+                {this.state.currentUser.role==="Asistente medica" && (
+                <Link style={{ textDecoration: 'none' }} to="/home">Crear cita médica</Link> 
+                )}
+                
+                {this.state.currentUser.role==="Medico" && (
+                <Link style={{ textDecoration: 'none' }} to="/patientform"><h4>Crear expediente médico</h4></Link>
+                )}
                 <br></br>
-                <button>Ver historial pacientes</button>
-                {/*linkeado a solo los pacientes relacionados al ID del medico  componente "PatientsAsigned"*/}
-                {/* estos botones solo son para perfil jefe de enfermeras */}
-                <button>Ver Enfermeras</button>
-                {/*linkeado a all nurses con el id de esa jefa de enfermeras componente "AllNurses"*/}
+                {this.state.currentUser.role==="Medico" && (
+                <Link style={{ textDecoration: 'none' }} to="/patientsasigned"><h4>Ver historial pacientes</h4></Link>
+                )}
+
+                {this.state.currentUser.role==="Jefe enfermeros" &&(
+                <Link style={{ textDecoration: 'none' }} to="/allnurses">Ver Enfermeras</Link>
+                )}
                 <br></br>
-                <button>Ver pacientes</button>
-                {/*linkeado a solo los pacientes relacionados al ID del jefa de enfermeras componente "PatientsAsigned" */}
+                {this.state.currentUser.role==="Jefe enfermeros" &&(
+                <Link style={{ textDecoration: 'none' }} to="/patientsasigned">Ver pacientes</Link>
+                )}
+
+                {this.state.currentUser.role==="Enfermeras" &&(
+                 <Link style={{ textDecoration: 'none' }} to="/home">Ver pacientes</Link>
+                  )}
               </div>
 
-              {/* AQUI FALTA LA VISTA DE EL PERFIL DE ENFERMERAS DEL LADO DERECHO */}
             </StyledProfile>
           );
         }}
