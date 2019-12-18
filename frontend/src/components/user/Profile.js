@@ -38,6 +38,9 @@ export default class Profile extends Component {
                 {this.state.currentUser.role==="Servicio Social" && (
                 <Link style={{ textDecoration: 'none' }} to="/allusers"><h4>ver todos los usuarios</h4></Link>
                 )}
+                {this.state.currentUser.role==="Servicio Social" && (
+                <Link style={{ textDecoration: 'none' }} to="/allpatients"><h4>ver todos los pacientes</h4></Link>
+                )}
                 
                 {this.state.currentUser.role==="Asistente medica" && (
                 <Link style={{ textDecoration: 'none' }} to="/patientform">Dar de alta paciente</Link>

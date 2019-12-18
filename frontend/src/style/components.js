@@ -251,6 +251,7 @@ h2{
 }
 `
 
+//cards on carousel
 export const StyledCard = styled.nav`
 
 .card{
@@ -266,25 +267,26 @@ border: 2px solid ${colors.decorations};
   color:${colors.text};
 }
 
-.cardButton{
- justify-content:center;
+.cardFooter{
+  align-items:center;
 }
-button{
-  font-size: 12px;
-  border-radius: 12px;
+
+h3{
+  font-size: 20px;
   padding: 10px 20px;
-  background-color: ${colors.higlights};
-  color: white;
+  color:${colors.light};
+  background-color:${colors.higlights};
+  display:space-between;
+  border: solid 2px ${colors.higlights};
 }
 
-button:hover {
-  background-color: white;
-  color:  ${colors.higlights};
-  border: 2px solid ${colors.higlights};
+h3:hover{
+  color:${colors.higlights};
+  background-color:${colors.light};
+  border: solid 2px ${colors.higlights};
 }
-
-
 `
+//carousel
 export const Carousel = styled.section`
   height:70vh;
   width: 100vw;
@@ -296,7 +298,7 @@ export const Carousel = styled.section`
   box-sizing: border-box;
   }
 `
-
+//cards all patients
 export const StyledPatients = styled.section`
 
 .allpatients{
@@ -322,9 +324,25 @@ h2{
   flex-direction: column;
   justify-content: space-between;
   padding: 5px 10px;
+  justify-text:center;
+}
+
+p{
+  font-size: 14px;
+  padding: 10px 20px;
+  color:${colors.light};
+  background-color:${colors.higlights};
+  display:space-between;
+  border: solid 2px ${colors.higlights};
+}
+
+p:hover{
+  color:${colors.higlights};
+  background-color:${colors.light};
+  border: solid 2px ${colors.higlights};
 }
 `
-
+//carsds nurses
 export const StyledJustNurses = styled.section`
 
 .allnurses{
@@ -352,6 +370,7 @@ h2{
   padding: 5px 10px;
 }
 `
+//Patient profile
 export const StyledPatientprofile = styled.section`
 
 .containerprofile{
@@ -429,6 +448,8 @@ li{
   margin-left:10%
 }
 `
+
+//nurse sheet
 export const StyledSheet =  styled.form`
 width:100%;
 height:100%;
@@ -487,6 +508,5 @@ align-items: center;
     color:  ${colors.higlights};
     border: 2px solid ${colors.higlights};
   }
-
 `
 

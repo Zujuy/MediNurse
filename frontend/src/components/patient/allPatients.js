@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyledPatients, StyledCard, Carousel } from '../../style/Components';
 import PatientCards from './PatientCards';
 
+
 export default function AllPatients() {
   return (
     <StyledPatients>
@@ -15,6 +16,12 @@ export default function AllPatients() {
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
+            <PatientCards></PatientCards>
+            <PatientCards></PatientCards>
+            <PatientCards></PatientCards>
+            <PatientCards></PatientCards>
+            <PatientCards></PatientCards>
+          
           </Carousel>
         </StyledCard>
       </div>
