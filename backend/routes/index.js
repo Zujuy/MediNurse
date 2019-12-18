@@ -1,34 +1,33 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const catchErrors = require("../middlewares/catchErrors");
-const upload = require('../cloudinary/cloudinary');
+const catchErrors = require('../middlewares/catchErrors');
+const upload = require('../config/cloudinary');
 
-const{
+const {
   createPatient,
   getPatient,
   updatePatient,
   getPatients
 } = require('../controllers/patientController');
 
-const{
+const {
   createUser,
   getUser,
   updateUser,
-  getUsers,
-}=require('../controllers/userControllers')
+  getUsers
+} = require('../controllers/userControllers');
 
-const{
+const {
   getNursingSheets,
   getNursingSheet,
   createNursingSheet,
-  updateNursingSheet,
-}=require('../controllers/nurseSheetControllers')
-
+  updateNursingSheet
+} = require('../controllers/nurseSheetControllers');
 
 /* GET home page */
-router.get("/", (req, res, next) => {
-    res.send("Bienvenido al 3er proyecto");
-  });
+router.get('/', (req, res, next) => {
+  res.send('Bienvenido al 3er proyecto');
+});
 
 // Patient
 router.get('/patients', catchErrors(getPatients));
@@ -43,19 +42,19 @@ router.post('/users', catchErrors(createUser));
 router.patch('/users/:id', catchErrors(updateUser));
 
 //upload photos
-router.get('/', (req, res, next) => {
-  res.render('index')
-})
+// router.get('/', (req, res, next) => {
+//   res.render('index');
+// });
 
 router.post('/upload', upload.single('photo'), (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3001')
-  res.status(201).json({ file: req.file, data: { ...req.body } })
-})
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3001');
+  res.status(201).json({ file: req.file, data: { ...req.body } });
+});
 
 //nursing sheet
 router.get('/nursingSheets', catchErrors(getNursingSheets));
 router.get('/nursingSheets/:id', catchErrors(getNursingSheet));
-router.get('/nursignSheets', catchErrors (createNursingSheet));
-router.patch('/nursingSheets/:id', catchErrors (updateNursingSheet));
+router.get('/nursignSheets', catchErrors(createNursingSheet));
+router.patch('/nursingSheets/:id', catchErrors(updateNursingSheet));
 
 module.exports = router;

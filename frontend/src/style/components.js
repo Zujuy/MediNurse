@@ -53,6 +53,18 @@ export const StyledNavbar = styled.nav`
   a:visited {
     color: ${colors.light};
   }
+  button{
+    background-color: ${colors.higlights};
+    font-size:16px;
+    color:${colors.light};
+    transition: 0.3s all ease;
+    border:0;
+    
+  }
+  button:hover{
+    border: solid ${colors.light};
+    border-width: 0 0 2px 0;
+  }
 `;
 
 // login
@@ -407,6 +419,7 @@ li{
 export const StyledSheet =  styled.section`
   max-width:600px;
   margin: 0 auto;
+  margin-top:100px;
 
   
   form{
@@ -419,8 +432,13 @@ export const StyledSheet =  styled.section`
     text-align: center;
   }
 
-  .form{
-    max-width: 40%;
-    margin:0 auto;
+  p{
+    color:  ${colors.higlights};
+    text-align: center;
+  }
+
+  input{
+    max-width:600px;
   }
 `
+

@@ -1,19 +1,20 @@
-const express = require("express");
-const passport = require("passport");
+const express = require('express');
+const catchErrors = require('../middlewares/catchErrors');
 const router = express.Router();
-const {
-  signup,
-  logout,
-  login,
-  current
-} = require('../controllers/auth');
+const { 
+  signup, 
+  logout, 
+  login, 
+  getProfile } = require('../controllers/auth');
+  
+const passport = require('passport');
 
-router.post("/login", passport.authenticate("local"), login);
+router.post('/login', passport.authenticate('local'), login);
 
-router.post("/signup", signup);
+router.post('/signup', signup);
 
-router.get("/logout", logout);
+router.get('/logout', logout);
 
-router.get("/current", current);
+router.get('/profile', getProfile);
 
 module.exports = router;

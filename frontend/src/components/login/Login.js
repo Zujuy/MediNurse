@@ -1,62 +1,62 @@
-import React, { Component } from "react";
-import {StyledForms} from "../../style/Components";
-import { MyContext } from '../../context'
+import React, { Component } from 'react';
+import { StyledForms } from '../../style/Components';
+import { MyContext } from '../../context';
 
 export default class Login extends Component {
   componentDidMount() {
     if (this.context.loggedUser) {
-      return this.props.history.push('/profile')
+      return this.props.history.push('/profile');
     }
   }
 
   render() {
     return (
       <MyContext.Consumer>
-        {context =>(
-        <form
+        {context => (
+          <form
             onSubmit={e => {
               context.handleLogin(e, () => {
-                this.props.history.push('/profile')
-              })
+                this.props.history.push('/profile');
+              });
             }}
-            >    
-      <StyledForms>
-      <div className="formstyle">
-        <h2>Login</h2>  
-        <div>
-          <label htmlFor="username">Mail de usuario</label>
-          <input
-            name="username"
-            placeholder="Mail de usuario"
-            type="email"
-            value={context.loginForm.username}
-            onChange={e => context.handleInput(e, 'loginForm')}
-            required
-            />
-          </div> 
+          >
+            <StyledForms>
+              <div className="formstyle">
+                <h2>Login</h2>
+                <div>
+                  <label htmlFor="email">Mail de usuario</label>
+                  <input
+                    name="email"
+                    placeholder="Mail de usuario"
+                    type="email"
+                    value={context.loginForm.email}
+                    onChange={e => context.handleInput(e, 'loginForm')}
+                    required
+                  />
+                </div>
 
-          <div>
-          <label htmlFor="password">Password</label>
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={context.loginForm.password}
-            onChange={e => context.handleInput(e, 'loginForm')}
-            required
-            />
-          </div>
-          
-          <div>
-          <button type="submit">Login</button>
-          </div>
+                <div>
+                  <label htmlFor="password">Password</label>
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    value={context.loginForm.password}
+                    onChange={e => context.handleInput(e, 'loginForm')}
+                    required
+                  />
+                </div>
 
-          </div>
-      </StyledForms>
-      </form> 
-      )}
+                <div>
+                  <button type="submit">Login</button>
+                </div>
+              </div>
+            </StyledForms>
+          </form>
+        )}
       </MyContext.Consumer>
-    )}
+    );
   }
+}
 
-  Login.contextType = MyContext
+Login.contextType = MyContext;

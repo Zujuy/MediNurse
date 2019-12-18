@@ -1,28 +1,35 @@
-const { Schema, model } = require('mongoose')
-const PLM = require('passport-local-mongoose')
+const { Schema, model } = require('mongoose');
+const PLM = require('passport-local-mongoose');
 
 const userSchema = new Schema(
-    {   
-      name: String,
-      last_name: String,
-      photo: String,
-      role:{
-
-        enum: ["Servicio Social", "Asistente medica","Medico","Jefe enfermeros","Enfermeras",]
-        
-      },
-      phone: String,
-      hospital: String,
-      especiality: String,
-      identification_card: String,
-      enrollment: String,
-      username: String,
-      password: String
+  {
+    name: String,
+    lastName: String,
+    photo: String,
+    role: {
+      type: String,
+      enum: [
+        'Servicio Social',
+        'Asistente medica',
+        'Medico',
+        'Jefe enfermeros',
+        'Enfermeras'
+      ]
     },
-    
-  )
-  
-  
-  
-  module.exports = model('User', userSchema)
+    phone: String,
+    hospital: String,
+    especiality: String,
+    identification_card: String,
+    enrollment: String,
+    email: String
+  },
+  {
+    timestamps: true,
+    versionKey: false
+  }
+);
+
+userSchema.plugin(PLM, { usernameField: 'email' });
+module.exports = model('User', userSchema);
+
   

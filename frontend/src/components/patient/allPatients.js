@@ -1,25 +1,23 @@
-import React, {Component} from "react";
-import {StyledPatients, StyledCard, Carousel} from "../../style/Components";
-import PatientCards from "../../components/patient/PatientCards";
+import React, { Component } from 'react';
+import { StyledPatients, StyledCard, Carousel } from '../../style/Components';
+import PatientCards from './PatientCards';
 
-export default function AllPatients(){
-    return(
-        <StyledPatients>
-        <h2>Pacientes activos</h2>
-        <div className="allpatients">
+export default function AllPatients() {
+  return (
+    <StyledPatients>
+      <h2>Pacientes activos</h2>
+      <div className="allpatients">
         <StyledCard>
-        <Carousel>
+          <Carousel>
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
-          
-        </Carousel>
+          </Carousel>
         </StyledCard>
-        </div>
-
-        </StyledPatients>
-    )
+      </div>
+    </StyledPatients>
+  );
 }

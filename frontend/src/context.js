@@ -1,123 +1,123 @@
-import React, { Component, createContext } from 'react'
-import AUTH_SERVICE from './services/AuthService'
-import Swal from 'sweetalert2'
-import PatientService from './services/patientsService'
-import axios from 'axios'
+import React, { Component, createContext } from 'react';
+import AUTH_SERVICE from './services/AuthService';
+import Swal from 'sweetalert2';
+import PatientService from './services/patientsService';
+import axios from 'axios';
 
-export const MyContext = createContext()
+export const MyContext = createContext();
 
 class MyProvider extends Component {
   state = {
     loggedUser: null,
 
     formSignup: {
-    name: '',
-    last_name: '',
-    role: '',
-    phone: '',
-    hospital: '',
-    especiality: '',
-    identification_card: '',
-    enrollment: '',
-    username: '',
-    password: '',
-    },
-
-    loginForm: {
+      name: '',
+      last_name: '',
+      role: '',
+      phone: '',
+      hospital: '',
+      especiality: '',
+      identification_card: '',
+      enrollment: '',
       username: '',
       password: ''
     },
-    user: {},
+
+    loginForm: {
+      email: '',
+      password: ''
+    },
+    currentUser: {},
 
     patientForm: {
-      status:'',
+      status: '',
       name: '',
       last_name: '',
-      photo:'',
+      photo: '',
       diagnostic: '',
       labs: '',
       medical_speciality: '',
       age: '',
       address: '',
       contact: '',
-      phone:'',
-    //   appointment: appointmentSchema.Types.ID,
-      social_security:'',
+      phone: '',
+      //   appointment: appointmentSchema.Types.ID,
+      social_security: '',
       blood_type: '',
       gender: '',
       alergies: '',
       weight: '',
       height: '',
       userAsigned: ''
-    },
-  }
+    }
+  };
 
   componentDidMount() {
-    if (document.cookie) {
+    if (document.cookie)
       AUTH_SERVICE.getUser()
         .then(({ data }) => {
-          this.setState({ loggedUser: true, user: data.user })
-          Swal.fire(`Welcome back ${data.user.name} `, '', 'success')
+          this.setState({ loggedUser: true, currentUser: data.user });
+          Swal.fire(`Welcome back ${data.user.name} `, '', 'success');
         })
-        .catch(err => console.log(err))
-    }
+        .catch(err => console.log(err));
   }
 
   handleInput = (e, obj) => {
-    const a = this.state[obj]
-    const key = e.target.name
-    a[key] = e.target.value
-    this.setState({ obj: a })
-  }
+    const a = this.state[obj];
+    const key = e.target.name;
+    a[key] = e.target.value;
+    this.setState({ obj: a });
+  };
 
   handleSignup = async e => {
-    e.preventDefault()
-    const { data } = await AUTH_SERVICE.signup(this.state.formSignup)
-    Swal.fire(`Welcome ${data.user.name}`, '', 'success')
-  }
+    e.preventDefault();
+    const { data } = await AUTH_SERVICE.signup(this.state.formSignup);
+    Swal.fire(`Welcome ${data.user.name}`, '', 'success');
+  };
 
   handleLogin = (e, cb) => {
-    e.preventDefault()
+    e.preventDefault();
     AUTH_SERVICE.login(this.state.loginForm)
       .then(({ data }) => {
-        this.setState({ loggedUser: true, user: data.user })
-        cb()
+        console.log(data);
+        this.setState({ loggedUser: true, user: data.user });
+        cb();
       })
       .catch(err => {
-        Swal.fire(`Hay un error`, 'verifica tu información')
-      })
-  }
+        Swal.fire(`Hay un error`, 'verifica tu información');
+      });
+  };
 
   handleLogout = async cb => {
-    await AUTH_SERVICE.logout()
-    window.localStorage.clear()
-    this.setState({ loggedUser: false, user: {} })
-    cb()
-  }
+    await AUTH_SERVICE.logout();
+    window.localStorage.clear();
+    this.setState({ loggedUser: false, user: {} });
+    cb();
+  };
 
-  handleCreatePatient = async e =>{
-    e.preventDefault()
-    const {data} = await PatientService.createPatient(this.state.patientForm)
-    Swal.fire(`Patient ${data.user.name} created`, '', 'success')
-  }
+  handleCreatePatient = async e => {
+    e.preventDefault();
+    const { data } = await PatientService.createPatient(this.state.patientForm);
+    Swal.fire(`Patient ${data.user.name} created`, '', 'success');
+  };
 
   handleFile = e => {
-    this.setState({ file: e.target.files[0] })
-  }
+    this.setState({ file: e.target.files[0] });
+  };
 
   handleSubmit = async e => {
-    e.preventDefault()
-    const formData = new FormData()
+    e.preventDefault();
+    const formData = new FormData();
     for (let key in this.state.fakeData) {
-      formData.append(key, this.state.fakeData[key])
+      formData.append(key, this.state.fakeData[key]);
     }
-    formData.append('photo', this.state.file)
-    const { data } = await axios.post('http://localhost:3000/upload', formData)
-    console.log(data)
-  }
+    formData.append('photo', this.state.file);
+    const { data } = await axios.post('http://localhost:3000/upload', formData);
+    console.log(data);
+  };
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <MyContext.Provider
         value={{
@@ -131,14 +131,13 @@ class MyProvider extends Component {
           patientForm: this.state.patientForm,
           handleCreatePatient: this.handleCreatePatient,
           handleFile: this.handleFile,
-          handleSubmit: this.handleSubmit,
-
+          handleSubmit: this.handleSubmit
         }}
       >
         {this.props.children}
       </MyContext.Provider>
-    )
+    );
   }
 }
 
-export default MyProvider
+export default MyProvider;
