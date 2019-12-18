@@ -161,11 +161,14 @@ export default class NurseSheetForm extends Component {
     let currentStep = this.state.currentStep;
     if(currentStep !==1){
       return (
+        <StyledSheet>
         <button 
           className="btn btn-secondary" 
           type="button" onClick={this._prev}>
         Atras
         </button>
+        <br></br>
+        </StyledSheet>
       )
     }
     return null;
@@ -175,11 +178,14 @@ export default class NurseSheetForm extends Component {
     let currentStep = this.state.currentStep;
     if(currentStep <6){
       return (
+        <StyledSheet>
         <button 
           className="btn btn-primary float-right" 
           type="button" onClick={this._next}>
         Siguiente
-        </button>        
+        </button>  
+        <br></br> 
+        </StyledSheet>     
       )
     }
     return null;
@@ -190,7 +196,7 @@ export default class NurseSheetForm extends Component {
         <React.Fragment>
         <StyledSheet>
         <h1>Hoja de enfermería</h1>
-        <p>Datos del paciente{this.state.currentStep} </p> 
+        <p>Datos del paciente - parte {this.state.currentStep}</p> 
         </StyledSheet>
         <form onSubmit={this.handleSubmit}>
         {/* 
@@ -335,6 +341,7 @@ export default class NurseSheetForm extends Component {
           />
         </div>
       </div>
+      <br></br>
       </StyledSheet>
     );
   }
@@ -345,7 +352,9 @@ export default class NurseSheetForm extends Component {
       return null
     } 
     return(
+      <StyledSheet>
       <div className="form-group">
+        <div>
         <label htmlFor="heart_rate">Frecuencia cardiaca</label>
         <input
           className="form-control"
@@ -356,6 +365,8 @@ export default class NurseSheetForm extends Component {
           value={props.heart_rate}
           onChange={props.handleChange}
           />
+        </div>
+        <div>
         <label htmlFor="temperature">Temperatura</label>
         <input
           className="form-control"
@@ -366,6 +377,8 @@ export default class NurseSheetForm extends Component {
           value={props.heart_rate}
           onChange={props.handleChange}
           />
+        </div>
+        <div>
         <label htmlFor="breathing_frequency">Frecuencia respiratoria</label>
         <input
           className="form-control"
@@ -376,6 +389,8 @@ export default class NurseSheetForm extends Component {
           value={props.breathing_frequency}
           onChange={props.handleChange}
           />
+        </div>
+        <div>
         <label htmlFor="blood_pressure">Presión arterial</label>
         <input
           className="form-control"
@@ -386,6 +401,8 @@ export default class NurseSheetForm extends Component {
           value={props.blood_pressure}
           onChange={props.handleChange}
           />
+        </div>
+        <div>
         <label htmlFor="mean_arterial_pressure">Presión arterial media</label>
         <input
           className="form-control"
@@ -396,6 +413,8 @@ export default class NurseSheetForm extends Component {
           value={props.mean_arterial_pressure}
           onChange={props.handleChange}
           />
+        </div>
+        <div>
         <label htmlFor="central_air_pressure">Presión venosa central</label>
         <input
           className="form-control"
@@ -406,7 +425,10 @@ export default class NurseSheetForm extends Component {
           value={props.central_air_pressure}
           onChange={props.handleChange}
           />
+        </div>
       </div>
+      <br></br>
+      </StyledSheet>
     );
   }
   
@@ -415,7 +437,9 @@ export default class NurseSheetForm extends Component {
       return null
     } 
     return(
+      <StyledSheet>
       <div className="form-group">
+        <div>
         <label htmlFor="glasgow">Glasgow</label>
         <input
           className="form-control"
@@ -426,6 +450,8 @@ export default class NurseSheetForm extends Component {
           value={props.glasgow}
           onChange={props.handleChange}
           />  
+        </div>
+        <div>
         <label htmlFor="ramsay">Ramsay</label>
         <input
           className="form-control"
@@ -436,6 +462,8 @@ export default class NurseSheetForm extends Component {
           value={props.ramsay}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="visual_scale">Escala Visual Análoga /EVA</label>
         <input
           className="form-control"
@@ -446,6 +474,8 @@ export default class NurseSheetForm extends Component {
           value={props.visual_scale}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="risk_falls">Riesgo de caidas</label>
         <input
           className="form-control"
@@ -456,7 +486,10 @@ export default class NurseSheetForm extends Component {
           value={props.risk_falls}
           onChange={props.handleChange}
           />   
+        </div>
       </div>
+      <br></br>
+      </StyledSheet>
     );
   }
 
@@ -465,7 +498,9 @@ export default class NurseSheetForm extends Component {
       return null
     } 
     return(
+      <StyledSheet>
       <div className="form-group">
+        <div>
         <label htmlFor="ph">pH</label>
         <input
           className="form-control"
@@ -475,7 +510,9 @@ export default class NurseSheetForm extends Component {
           placeholder="pH"
           value={props.ph}
           onChange={props.handleChange}
-          />  
+          /> 
+        </div>
+        <div>
         <label htmlFor="glucose">Glucosa</label>
         <input
           className="form-control"
@@ -486,6 +523,8 @@ export default class NurseSheetForm extends Component {
           value={props.glucose}
           onChange={props.handleChange}
           /> 
+        </div> 
+        <div>
         <label htmlFor="ketones">Cetonas</label>
         <input
           className="form-control"
@@ -496,6 +535,8 @@ export default class NurseSheetForm extends Component {
           value={props.ketones}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="proteins">Proteinas</label>
         <input
           className="form-control"
@@ -506,6 +547,8 @@ export default class NurseSheetForm extends Component {
           value={props.proteins}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="blood">Sangre</label>
         <input
           className="form-control"
@@ -515,8 +558,10 @@ export default class NurseSheetForm extends Component {
           placeholder="Sangres"
           value={props.blood}
           onChange={props.handleChange}
-          />  
-         <label htmlFor="density">density</label>
+          /> 
+        </div> 
+        <div>
+        <label htmlFor="density">density</label>
         <input
           className="form-control"
           id="density"
@@ -526,7 +571,10 @@ export default class NurseSheetForm extends Component {
           value={props.density}
           onChange={props.handleChange}
           /> 
+        </div>
       </div>
+      <br></br>
+      </StyledSheet>
     );
   }
   
@@ -535,7 +583,9 @@ export default class NurseSheetForm extends Component {
       return null
     } 
     return(
+      <StyledSheet>
       <div className="form-group">
+        <div>
         <label htmlFor="solution_name">Nombre de la solución</label>
         <input
           className="form-control"
@@ -546,6 +596,8 @@ export default class NurseSheetForm extends Component {
           value={props.solution_name}
           onChange={props.handleChange}
           />  
+        </div>
+        <div>
         <label htmlFor="solutions_time">Hora de administración de la solución</label>
         <input
           className="form-control"
@@ -556,6 +608,8 @@ export default class NurseSheetForm extends Component {
           value={props.solutions_time}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="medicine_name">Nombre del medicamento</label>
         <input
           className="form-control"
@@ -566,6 +620,8 @@ export default class NurseSheetForm extends Component {
           value={props.medicine_name}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="medicines_time">Hora de la administración del medicamento</label>
         <input
           className="form-control"
@@ -576,6 +632,8 @@ export default class NurseSheetForm extends Component {
           value={props.medicines_time}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="food_name">Comida administrada</label>
         <input
           className="form-control"
@@ -585,7 +643,9 @@ export default class NurseSheetForm extends Component {
           placeholder="Comida administrada"
           value={props.food_name}
           onChange={props.handleChange}
-          />  
+          />
+        </div>
+        <div>
         <label htmlFor="intake_time">Hora de ingesta</label>
         <input
           className="form-control"
@@ -596,6 +656,8 @@ export default class NurseSheetForm extends Component {
           value={props.intake_time}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="drug_name">Nombre del medicamento prescrito</label>
         <input
           className="form-control"
@@ -606,6 +668,8 @@ export default class NurseSheetForm extends Component {
           value={props.drug_name}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="presentation">Presentación del medicamento</label>
         <input
           className="form-control"
@@ -616,6 +680,8 @@ export default class NurseSheetForm extends Component {
           value={props.presentation}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="via">Vía</label>
         <input
           className="form-control"
@@ -626,6 +692,8 @@ export default class NurseSheetForm extends Component {
           value={props.via}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="dose">Dosis</label>
         <input
           className="form-control"
@@ -636,6 +704,8 @@ export default class NurseSheetForm extends Component {
           value={props.intake_time}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="presence">Presencia</label>
         <input
           className="form-control"
@@ -646,6 +716,8 @@ export default class NurseSheetForm extends Component {
           value={props.presence}
           onChange={props.handleChange}
           /> 
+        </div>
+        <div>
         <label htmlFor="schedule">Horarios</label>
         <input
           className="form-control"
@@ -655,8 +727,11 @@ export default class NurseSheetForm extends Component {
           placeholder="Horarios"
           value={props.schedule}
           onChange={props.handleChange}
-          /> 
+          />
+        </div> 
       </div>
+      <br></br>
+      </StyledSheet>
     );
   }
 
@@ -666,7 +741,9 @@ export default class NurseSheetForm extends Component {
     } 
     return(
       <React.Fragment>
+      <StyledSheet>
       <div className="form-group">
+        <div>
         <label htmlFor="assessment">Valoraciones</label>
         <input
           className="form-control"
@@ -676,7 +753,9 @@ export default class NurseSheetForm extends Component {
           placeholder="Valoraciones"
           value={props.assessment}
           onChange={props.handleChange}
-          />  
+          /> 
+        </div>
+        <div>
         <label htmlFor="diagnostic">Diagnostico</label>
         <input
           className="form-control"
@@ -687,6 +766,8 @@ export default class NurseSheetForm extends Component {
           value={props.diagnostic}
           onChange={props.handleChange}
           /> 
+        </div> 
+        <div>
         <label htmlFor="interventions">Intervenciones</label>
         <input
           className="form-control"
@@ -696,7 +777,9 @@ export default class NurseSheetForm extends Component {
           placeholder="Intervenciones"
           value={props.interventions}
           onChange={props.handleChange}
-          /> 
+          />
+        </div>
+        <div>
         <label htmlFor="response">Respuesta-Evolución</label>
         <input
           className="form-control"
@@ -706,7 +789,9 @@ export default class NurseSheetForm extends Component {
           placeholder="Respuesta-Evolución"
           value={props.response}
           onChange={props.handleChange}
-          /> 
+          />
+        </div> 
+        <div>
         <label htmlFor="observations">Observaciones</label>
         <input
           className="form-control"
@@ -716,9 +801,12 @@ export default class NurseSheetForm extends Component {
           placeholder="Observaciones"
           value={props.observations}
           onChange={props.handleChange}
-          />  
+          />
+        </div>   
       </div>
       <button className="btn btn-success btn-block">Enviar</button>
+      <br></br>
+      </StyledSheet>
       </React.Fragment>
     );
   }

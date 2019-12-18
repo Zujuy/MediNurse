@@ -416,20 +416,32 @@ li{
   margin-left:10%
 }
 `
-export const StyledSheet =  styled.section`
-  max-width:600px;
-  margin: 0 auto;
-  margin-top:100px;
+export const StyledSheet =  styled.form`
+display:flex;
+flex-direction: column;
+align-items: center;
 
-  
+
+  .form-group > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding:5px;
+  }
+
   form{
-    max-width:50%,
+    max-width:50%;
     margin:0 auto;
+  }
+
+  label{
+    color:${colors.text};
   }
 
   h1{
     color:  ${colors.higlights};
     text-align: center;
+    margin-top:70px;
   }
 
   p{
@@ -438,7 +450,29 @@ export const StyledSheet =  styled.section`
   }
 
   input{
-    max-width:600px;
+    width:600px;
+    padding: 14px;
+    border:solid 2px ${colors.higlights};
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size:14px;
+    color:${colors.text}
   }
+
+  button{
+    flex-wrap: wrap;
+    font-size: 12px;
+    border-radius: 12px;
+    padding: 10px 20px;
+    background-color: ${colors.higlights};
+    color: white;
+  } 
+
+  button:hover {
+    background-color: white;
+    color:  ${colors.higlights};
+    border: 2px solid ${colors.higlights};
+  }
+
 `
 
