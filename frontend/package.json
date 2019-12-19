@@ -1,0 +1,50 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.8.0",
+    "@material-ui/icons": "^4.5.1",
+    "axios": "^0.19.0",
+    "chart.js": "^2.9.3",
+    "install": "^0.13.0",
+    "little-state-machine": "^2.10.7",
+    "react": "^16.10.0",
+    "react-animated-slider": "^2.0.0",
+    "react-base-table": "^1.9.1",
+    "react-chartjs": "^1.2.0",
+    "react-chartjs-2": "^2.8.0",
+    "react-dom": "^16.10.0",
+    "react-gesture-gallery": "^1.1.0",
+    "react-gesture-responder": "^2.1.0",
+    "react-hook-form": "^3.29.3",
+    "react-responsive-carousel": "^3.1.51",
+    "react-router-dom": "^5.1.1",
+    "react-scripts": "3.1.2",
+    "react-simple-card": "^2.0.2",
+    "styled-components": "^4.4.1",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^9.5.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

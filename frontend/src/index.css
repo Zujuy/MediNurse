@@ -1,0 +1,12 @@
+/* General styles */
+body {
+    margin:0;
+    font-family: "https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,900,900i&display=swap" rel="stylesheet";
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  code {
+    font-family: "https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,900,900i&display=swap" rel="stylesheet";
+  }
+  
