@@ -43,11 +43,11 @@ export default class Profile extends Component {
                 )}
                 
                 {this.state.currentUser.role==="Asistente medica" && (
-                <Link style={{ textDecoration: 'none' }} to="/patientform">Dar de alta paciente</Link>
+                <Link style={{ textDecoration: 'none' }} to="/patientform"><h4>Dar de alta paciente</h4>Dar de alta paciente</Link>
                 )}
                 <br></br>
                 {this.state.currentUser.role==="Asistente medica" && (
-                <Link style={{ textDecoration: 'none' }} to="/home">Crear cita médica</Link> 
+                <Link style={{ textDecoration: 'none' }} to="/home"><h4>Crear cita médica</h4></Link> 
                 )}
                 
                 {this.state.currentUser.role==="Medico" && (
@@ -59,15 +59,15 @@ export default class Profile extends Component {
                 )}
 
                 {this.state.currentUser.role==="Jefe enfermeros" &&(
-                <Link style={{ textDecoration: 'none' }} to="/allnurses">Ver Enfermeras</Link>
+                <Link style={{ textDecoration: 'none' }} to="/allnurses"><h4>Ver Enfermeras</h4></Link>
                 )}
                 <br></br>
                 {this.state.currentUser.role==="Jefe enfermeros" &&(
-                <Link style={{ textDecoration: 'none' }} to="/patientsasigned">Ver pacientes</Link>
+                <Link style={{ textDecoration: 'none' }} to="/patientsasigned"><h4>Ver pacientes</h4></Link>
                 )}
 
-                {this.state.currentUser.role==="Enfermeras" &&(
-                 <Link style={{ textDecoration: 'none' }} to="/home">Ver pacientes</Link>
+                {this.state.currentUser.role==="Enfermera" &&(
+                 <Link style={{ textDecoration: 'none' }} to="/patientsasigned"><h4>Ver pacientes</h4></Link>
                   )}
               </div>
 

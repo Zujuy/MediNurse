@@ -216,7 +216,7 @@ export default class NurseSheetForm extends Component {
             heart_rate={this.state.heart_rate}
             temperature={this.state.heart_temperature}
             breathing_frequency={this.state.breathing_frequency}
-            blood_pressuree={this.state.blood_pressure}
+            blood_pressure={this.state.blood_pressure}
             mean_arterial_pressure={this.state.mean_arterial_pressure}
             central_air_pressure={this.state.central_air_pressure}
           />

@@ -128,6 +128,7 @@ export default function Signup(props) {
                   onChange={e => context.handleInput(e, 'formSignup')}
                 />
               </div>
+
               <div>
                 <button type="submit">Registrarse</button>
               </div>

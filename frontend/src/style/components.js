@@ -28,6 +28,7 @@ export const StyledNavbar = styled.nav`
     padding: 5px 5px 5px 10px;
     width: 30px;
   }
+
   ul {
     list-style: none;
     padding: 0;
@@ -35,24 +36,27 @@ export const StyledNavbar = styled.nav`
     justify-content: space-evenly;
     width: 40%;
     margin: 0;
-    align-items: center;
-    
-
+    align-items: center; 
   }
+
   li {
     transition: 0.3s all ease;
   }
+
   li:hover {
     border: solid ${colors.light};
     border-width: 0 0 2px 0;
   }
+
   a {
     color: ${colors.light};
     text-decoration: none;
   }
+
   a:visited {
     color: ${colors.light};
   }
+
   button{
     background-color: ${colors.higlights};
     font-size:16px;
@@ -61,6 +65,7 @@ export const StyledNavbar = styled.nav`
     border:0;
     
   }
+
   button:hover{
     border: solid ${colors.light};
     border-width: 0 0 2px 0;
@@ -78,9 +83,9 @@ align-items: center;
 
 .formstyle > div{
   display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding:5px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding:5px;
 }
 
 h2{
@@ -136,7 +141,6 @@ button:hover {
 `
 
 //home
-
 export const StyledHome = styled.section`
 
  .container{
@@ -144,6 +148,7 @@ export const StyledHome = styled.section`
  }
 `
 
+//userprofile
 export const StyledProfile = styled.section`
 
 .containerprofile{
@@ -197,7 +202,6 @@ p{
   margin-left:50%;
 }
 
-
 h4{
   font-size: 20px;
   padding: 10px 20px;
@@ -213,14 +217,11 @@ h4:hover{
   background-color:${colors.light};
   border: solid 2px ${colors.higlights};
 }
-
-
 `
-
+//All users cards
 export const StyledAll = styled.nav`
 .all{
   margin-top:50px;
-
 }
 
 .nurses{
@@ -231,7 +232,6 @@ export const StyledAll = styled.nav`
   color: ${colors.higlights};
   width:50%; 
   height:50vh;
-  
 }
 
 .doctors{
@@ -241,13 +241,11 @@ export const StyledAll = styled.nav`
   color: ${colors.higlights};
   width:50%;
   height:50%vh;
-
 }
 
 h2{
   margin-left:30px;
   text-align:justify;
-
 }
 `
 
@@ -342,7 +340,7 @@ p:hover{
   border: solid 2px ${colors.higlights};
 }
 `
-//carsds nurses
+//cards only nurses
 export const StyledJustNurses = styled.section`
 
 .allnurses{
@@ -415,12 +413,10 @@ h5{
   margin-left:10%
 }
 
-
 .profileButtons{
   position:relative;
   z-index:2;
   margin-left:60%;
-
 }
 
 button{
@@ -449,7 +445,7 @@ li{
 }
 `
 
-//nurse sheet
+//nurse sheet form
 export const StyledSheet =  styled.form`
 width:100%;
 height:100%;
@@ -457,7 +453,6 @@ margin-top:50px;
 display:flex;
 flex-direction: column;
 align-items: center;
-
 
   .form-group > div{
     display: flex;
@@ -510,3 +505,88 @@ align-items: center;
   }
 `
 
+//chart
+export const StyledChart = styled.section`
+.DataChart {
+  margin-left:3%;
+  padding: 2%;
+  display: inline-block;
+  width:25%;
+}
+
+.DataChart-header {
+  color: ${colors.higlights};
+}
+
+.canvas-container {
+  height: 60vh;
+}
+
+H2{
+  text-align:center;
+  color:${colors.higlights}
+}
+`
+// only sheet rendered
+export const StyledNurseSheet = styled.section`
+display: flex;
+flex-direction: column;
+width: 100%vw;
+height: 100%vh;
+padding: 0 ,15px, 0, 15px;
+align-items: justify;
+margin-top:70px;
+
+hr{
+  width:90%;
+  border: 2px solid ${colors.decorations};
+}
+
+.header{
+    text-align: center;
+    color: ${colors.higlights};
+    padding:0;
+  }
+
+.PatientData{
+  position:relative;
+  z-index:1;
+  width:45%;
+  text-align:left;
+  margin-left:3%;
+  color: ${colors.text};
+  border-right: 2px solid ${colors.higlights};
+}
+
+.PatientAsigned{
+  position:absolute;
+  z-index:2;
+  width:40%;
+  text-align:left;
+  color: ${colors.text};
+  margin-left: 50%;
+  margin-top: 15%;
+}
+
+.pressures{
+  text-align: left;
+  margin-left:3%;
+  color: ${colors.text};
+  min-width:10%;
+  max-width:15%;
+}
+`
+
+export const StyledTables = styled.section`
+height:80%vh;
+padding:15px;
+
+.classes.table{
+  color: ${colors.text}
+}
+
+h2{
+  text-align:center;
+  color:${colors.higlights}
+}
+`
