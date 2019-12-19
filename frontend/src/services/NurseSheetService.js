@@ -1,8 +1,7 @@
 import axios from "axios"
 
 export default class NurseSheetService {
-    baseURL = 'http://localhost:3000';
-    //baseUrl="https://ancient-atoll-83528.herokuapp.com"
+    baseUrl="http://localhost:3000"
     form = axios.create ({
         baseURL: this.baseUrl,
         withCredentials: true

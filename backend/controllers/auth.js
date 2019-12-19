@@ -33,7 +33,7 @@ exports.signup = async (req, res, next) => {
       req.body.password
     )
       .then(user => {
-        res.header('Access-Control-Allow-Origin', process.env.FRONTENDPOINT);
+        res.header('Access-Control-Allow-Origin', 'http://localhost:3001');
         res.status(200).json({ user });
       })
       .catch(err => {

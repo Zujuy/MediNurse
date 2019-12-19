@@ -15,14 +15,13 @@ export default class Profile extends Component {
   };
 
   componentDidMount() {
-    
+    if (document.cookie)
       AUTH_SERVICE.getUser()
         .then(({ data }) => {
           this.setState({ currentUser: data.user });
         })
         .catch(err => console.log(err));
   }
-
   render() {
     return (
       <MyContext.Consumer>
@@ -55,7 +54,7 @@ export default class Profile extends Component {
                 <br></br>
                 {this.state.currentUser.role === 'Asistente medica' && (
                   <Link style={{ textDecoration: 'none' }} to="/home">
-                    <h4>Crear cita médica</h4>
+                   <h4>Crear cita médica</h4> 
                   </Link>
                 )}
 
@@ -85,17 +84,16 @@ export default class Profile extends Component {
                     style={{ textDecoration: 'none' }}
                     to="/patientsasigned"
                   >
-                    <h4>Ver pacientes</h4>
+                   <h4>Ver pacientes</h4> 
                   </Link>
                 )}
 
                 {this.state.currentUser.role === 'Enfermera' && (
                   <Link
-                  
                     style={{ textDecoration: 'none' }}
                     to="/patientsAsigned"
                   >
-                    <h4>Ver pacientes</h4>
+                   <h4>Ver pacientes</h4>
                   </Link>
                 )}
               </div>

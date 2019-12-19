@@ -218,4 +218,3 @@ export default class Signup extends Component {
 }
 
 Signup.contextType = MyContext;
-

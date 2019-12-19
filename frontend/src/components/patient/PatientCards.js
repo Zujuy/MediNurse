@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import {
   Card,
   CardHeader,
@@ -14,9 +16,8 @@ const PatientCards = props => {
       <CardHeader className="header">{props.name}</CardHeader>
       <CardBody className="body">{props.medical_speciality}</CardBody>
       <CardFooter className="cardButton">
-        <button>Ver hoja enfermería</button>
+        <Link style={{ textDecoration: 'none' }} to="/nursesheet"><h3>Ver hoja enfermería</h3></Link>
       </CardFooter>
-      {/*este boton lleva a los pacientes de ese usuario */}
     </Card>
   );
 };
