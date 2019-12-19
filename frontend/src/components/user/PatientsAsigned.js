@@ -15,7 +15,8 @@ export default class PatientsAsigned extends Component {
     if (document.cookie)
       PATIENT_SERVICE.getPatientsAsigned()
         .then(({ data }) => {
-          this.setState({ patients: [data] });
+          this.setState({ patients: data.patientsAsigned });
+          console.log(this.state.patients);
         })
         .catch(err => console.log(err));
   }
@@ -31,8 +32,10 @@ export default class PatientsAsigned extends Component {
 
     let cardPatient = asignedPatients.map((e, i) => (
       <PatientCards
-        name={[e.patientsAsigned][i]}
+        photo={e.photo}
+        name={e.name}
         value={e._id}
+        medical_speciality={e.medical_speciality}
         key={i}
       ></PatientCards>
     ));

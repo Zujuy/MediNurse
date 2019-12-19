@@ -341,26 +341,6 @@ export default class PatientForm extends Component {
                   </select>
                 </div>
 
-                {/* <div>
-                  <label htmlFor="role">Role</label>
-                  <label>Activo</label>
-                  <input
-                    type="radio"
-                    name="role"
-                    checked={statusAct}
-                    value={this.state.patientForm.role}
-                    onClick={handleStatusAct}
-                  />
-                  <label>No activo</label>
-                  <input
-                    type="radio"
-                    name="role"
-                    checked={statusNoAct}
-                    value={context.patientForm.role}
-                    onClick={handleStatusNoAct}
-                  />
-                </div> */}
-
                 <div>
                   <button type="submit">Crear</button>
                 </div>
