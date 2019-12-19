@@ -8,8 +8,10 @@ La app busca ser totalmente técnica, no es una app para el paciente, es para el
 Usuarios:
 
 Usuario: blanca@blanca.com
+
 password: asd
 
 Usuario: mariel@mariel.com
+
 password: asd
 
