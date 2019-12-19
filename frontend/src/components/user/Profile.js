@@ -90,6 +90,7 @@ export default class Profile extends Component {
 
                 {this.state.currentUser.role === 'Enfermera' && (
                   <Link
+                  
                     style={{ textDecoration: 'none' }}
                     to="/patientsAsigned"
                   >
