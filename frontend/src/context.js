@@ -40,7 +40,7 @@ class MyProvider extends Component {
   };
 
   componentDidMount() {
-    if (document.cookie)
+    
       AUTH_SERVICE.getUser()
         .then(({ data }) => {
           this.setState({ loggedUser: true, currentUser: data.user });

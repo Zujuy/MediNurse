@@ -12,7 +12,6 @@ export default class PatientsAsigned extends Component {
   };
 
   componentDidMount() {
-    if (document.cookie)
       PATIENT_SERVICE.getPatientsAsigned()
         .then(({ data }) => {
           this.setState({ patients: data.patientsAsigned });

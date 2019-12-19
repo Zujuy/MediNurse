@@ -32,7 +32,7 @@ export default class PatientForm extends Component {
   };
 
   componentDidMount() {
-    if (document.cookie)
+    
       PATIENT_SERVICE.getMedicsAndNurses()
         .then(({ data }) => {
           this.setState({ userAbailables: data });
