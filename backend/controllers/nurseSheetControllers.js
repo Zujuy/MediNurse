@@ -178,11 +178,9 @@ const nursingSheet = nursingSheet.findById (id, {
     shift,
     time,
     bed,
-    // estos 3 parametros haran la grafica
     heart_rate,
     temperature,
     breathing_frequency,
-    //
     blood_pressure,
     mean_arterial_pressure,
     central_air_pressure,
@@ -223,4 +221,3 @@ const nursingSheet = nursingSheet.findById (id, {
     observations})
     res.status(200).jason(nursingSheet);
 };
-

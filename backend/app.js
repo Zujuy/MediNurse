@@ -56,6 +56,7 @@ app.use(cookieParser());
 
 const index = require('./routes/index');
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/patients', require('./routes/patient'));
 app.use('/', index);
 
 // Uncomment this line for production

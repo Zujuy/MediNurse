@@ -4,13 +4,6 @@ const catchErrors = require('../middlewares/catchErrors');
 const upload = require('../config/cloudinary');
 
 const {
-  createPatient,
-  getPatient,
-  updatePatient,
-  getPatients
-} = require('../controllers/patientController');
-
-const {
   createUser,
   getUser,
   updateUser,
@@ -28,12 +21,6 @@ const {
 router.get('/', (req, res, next) => {
   res.send('Bienvenido al 3er proyecto');
 });
-
-// Patient
-router.get('/patients', catchErrors(getPatients));
-router.get('/patients/:id', catchErrors(getPatient));
-router.post('/patients', catchErrors(createPatient));
-router.patch('/patients/:id', catchErrors(updatePatient));
 
 //User
 router.get('/users', catchErrors(getUsers));

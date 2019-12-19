@@ -13,7 +13,7 @@ const userSchema = new Schema(
         'Asistente medica',
         'Medico',
         'Jefe enfermeros',
-        'Enfermeras'
+        'Enfermera'
       ]
     },
     phone: String,
@@ -31,5 +31,3 @@ const userSchema = new Schema(
 
 userSchema.plugin(PLM, { usernameField: 'email' });
 module.exports = model('User', userSchema);
-
-  
