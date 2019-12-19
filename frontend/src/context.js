@@ -87,7 +87,7 @@ class MyProvider extends Component {
   };
 
   render() {
-    console.log(this.state);
+    
     return (
       <MyContext.Provider
         value={{
