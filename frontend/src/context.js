@@ -10,19 +10,6 @@ class MyProvider extends Component {
   state = {
     loggedUser: null,
 
-    formSignup: {
-      name: '',
-      last_name: '',
-      role: '',
-      phone: '',
-      hospital: '',
-      especiality: '',
-      identification_card: '',
-      enrollment: '',
-      username: '',
-      password: ''
-    },
-
     loginForm: {
       email: '',
       password: ''
@@ -69,10 +56,8 @@ class MyProvider extends Component {
     this.setState({ obj: a });
   };
 
-  handleSignup = async e => {
-    e.preventDefault();
-    const { data } = await AUTH_SERVICE.signup(this.state.formSignup);
-    Swal.fire(`Welcome ${data.user.name}`, '', 'success');
+  handleFile = e => {
+    this.setState({ file: e.target.files[0] });
   };
 
   handleLogin = (e, cb) => {
@@ -101,28 +86,12 @@ class MyProvider extends Component {
     Swal.fire(`Patient ${data.user.name} created`, '', 'success');
   };
 
-  handleFile = e => {
-    this.setState({ file: e.target.files[0] });
-  };
-
-  handleSubmit = async e => {
-    e.preventDefault();
-    const formData = new FormData();
-    for (let key in this.state.fakeData) {
-      formData.append(key, this.state.fakeData[key]);
-    }
-    formData.append('photo', this.state.file);
-    const { data } = await axios.post('http://localhost:3000/upload', formData);
-    console.log(data);
-  };
-
   render() {
     console.log(this.state);
     return (
       <MyContext.Provider
         value={{
           loggedUser: this.state.loggedUser,
-          formSignup: this.state.formSignup,
           loginForm: this.state.loginForm,
           handleInput: this.handleInput,
           handleSignup: this.handleSignup,

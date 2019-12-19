@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import {StyledProfile, StyledNurse, Carousel, StyledCard} from '../../style/Components';
+import {
+  StyledProfile,
+  StyledNurse,
+  Carousel,
+  StyledCard
+} from '../../style/Components';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../context';
 import AUTH_SERVICE from '../../services/AuthService';
@@ -35,42 +40,63 @@ export default class Profile extends Component {
               </div>
 
               <div className="profilelinks">
-                {this.state.currentUser.role==="Servicio Social" && (
-                <Link style={{ textDecoration: 'none' }} to="/allusers"><h4>ver todos los usuarios</h4></Link>
-                )}
-                {this.state.currentUser.role==="Servicio Social" && (
-                <Link style={{ textDecoration: 'none' }} to="/allpatients"><h4>ver todos los pacientes</h4></Link>
-                )}
-                
-                {this.state.currentUser.role==="Asistente medica" && (
-                <Link style={{ textDecoration: 'none' }} to="/patientform"><h4>Dar de alta paciente</h4>Dar de alta paciente</Link>
-                )}
-                <br></br>
-                {this.state.currentUser.role==="Asistente medica" && (
-                <Link style={{ textDecoration: 'none' }} to="/home"><h4>Crear cita médica</h4></Link> 
-                )}
-                
-                {this.state.currentUser.role==="Medico" && (
-                <Link style={{ textDecoration: 'none' }} to="/patientform"><h4>Crear expediente médico</h4></Link>
-                )}
-                <br></br>
-                {this.state.currentUser.role==="Medico" && (
-                <Link style={{ textDecoration: 'none' }} to="/patientsasigned"><h4>Ver historial pacientes</h4></Link>
+                {this.state.currentUser.role === 'Servicio Social' && (
+                  <Link style={{ textDecoration: 'none' }} to="/allusers">
+                    <h4>ver todos los usuarios</h4>
+                  </Link>
                 )}
 
-                {this.state.currentUser.role==="Jefe enfermeros" &&(
-                <Link style={{ textDecoration: 'none' }} to="/allnurses"><h4>Ver Enfermeras</h4></Link>
+                {this.state.currentUser.role === 'Asistente medica' && (
+                  <Link style={{ textDecoration: 'none' }} to="/patientform">
+                    <h4>Dar de alta paciente</h4>
+                  </Link>
                 )}
                 <br></br>
-                {this.state.currentUser.role==="Jefe enfermeros" &&(
-                <Link style={{ textDecoration: 'none' }} to="/patientsasigned"><h4>Ver pacientes</h4></Link>
+                {this.state.currentUser.role === 'Asistente medica' && (
+                  <Link style={{ textDecoration: 'none' }} to="/home">
+                    <h4>Crear cita médica</h4>
+                  </Link>
                 )}
 
-                {this.state.currentUser.role==="Enfermera" &&(
-                 <Link style={{ textDecoration: 'none' }} to="/patientsasigned"><h4>Ver pacientes</h4></Link>
-                  )}
+                {this.state.currentUser.role === 'Medico' && (
+                  <Link style={{ textDecoration: 'none' }} to="/patientform">
+                    <h4>Crear expediente médico</h4>
+                  </Link>
+                )}
+                <br></br>
+                {this.state.currentUser.role === 'Medico' && (
+                  <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/patientsasigned"
+                  >
+                    <h4>Ver historial pacientes</h4>
+                  </Link>
+                )}
+
+                {this.state.currentUser.role === 'Jefe enfermeros' && (
+                  <Link style={{ textDecoration: 'none' }} to="/allnurses">
+                    <h4>Ver Enfermeras</h4>
+                  </Link>
+                )}
+                <br></br>
+                {this.state.currentUser.role === 'Jefe enfermeros' && (
+                  <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/patientsasigned"
+                  >
+                    <h4>Ver pacientes</h4>
+                  </Link>
+                )}
+
+                {this.state.currentUser.role === 'Enfermera' && (
+                  <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/patientsAsigned"
+                  >
+                    <h4>Ver pacientes</h4>
+                  </Link>
+                )}
               </div>
-
             </StyledProfile>
           );
         }}

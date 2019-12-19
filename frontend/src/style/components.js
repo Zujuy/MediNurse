@@ -305,6 +305,12 @@ export const StyledPatients = styled.section`
   width:100%;
   height:50%vh;
 }
+
+img{
+  max-width: 400px;
+  min-width: 150px;
+}
+
 h2{
   color:${colors.higlights};
   margin-top:70px;

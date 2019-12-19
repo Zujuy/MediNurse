@@ -1,18 +1,28 @@
-import axios from "axios"
+import axios from 'axios';
 
-export default class PatientService {
-    baseUrl="http://localhost:3000"
-    form = axios.create ({
-        baseURL: this.baseUrl,
-        withCredentials: true
-    });
-    getPatient(){
-        return this.form.get("/patients")
-    }
-    createPatient(patientData){
-        return this.form.post("/patients", patientData)
-    }
-    updatePatient(patientData){
-        return this.form.patch("/patients", patientData)
-    }
-} 
+const baseURL = 'http://localhost:3000';
+
+const form = axios.create({
+  baseURL,
+  withCredentials: true
+});
+
+const PATIENT_SERVICE = {
+  getMedicsAndNurses: () => {
+    return form.get('/api/patients/nurses&&medics');
+  },
+  getPatient: () => {
+    return form.get('/api/patients/onepatient/:id');
+  },
+  createPatient: patientData => {
+    return form.post('/api/patients/createpatient', patientData);
+  },
+  updatePatient: patientData => {
+    return form.patch('/api/patients/update/:id', patientData);
+  },
+  getPatientsAsigned: () => {
+    return form.get('api/patients/all/asigned');
+  }
+};
+
+export default PATIENT_SERVICE;

@@ -749,7 +749,7 @@ export default class NurseSheetForm extends Component {
           /> 
         </div>
         <div>
-        <label htmlFor="diagnostic">Diagnostico</label>
+        <label htmlFor="diagnostic">Diagnóstico</label>
         <input
           className="form-control"
           id="diagnostic"
