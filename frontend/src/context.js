@@ -64,7 +64,6 @@ class MyProvider extends Component {
     e.preventDefault();
     AUTH_SERVICE.login(this.state.loginForm)
       .then(({ data }) => {
-        console.log(data);
         this.setState({ loggedUser: true, user: data.user });
         cb();
       })
