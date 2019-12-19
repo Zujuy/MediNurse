@@ -40,7 +40,7 @@ class MyProvider extends Component {
   };
 
   componentDidMount() {
-    if (document.cookie)
+    
       AUTH_SERVICE.getUser()
         .then(({ data }) => {
           this.setState({ loggedUser: true, currentUser: data.user });
@@ -64,7 +64,6 @@ class MyProvider extends Component {
     e.preventDefault();
     AUTH_SERVICE.login(this.state.loginForm)
       .then(({ data }) => {
-        console.log(data);
         this.setState({ loggedUser: true, user: data.user });
         cb();
       })
@@ -87,7 +86,6 @@ class MyProvider extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <MyContext.Provider
         value={{

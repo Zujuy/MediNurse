@@ -29,7 +29,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: process.env.FRONTENDPOINT
+    origin: [process.env.FRONTENDPOINT, 'http://localhost:3000']
   })
 );
 
@@ -39,7 +39,7 @@ app.use(
     secret: process.env.SECRET,
     resave: true,
     saveUninitialized: false,
-    cookie: { httpOnly: false, secure: false }
+    //cookie: { httpOnly: false, secure: false }
   })
 );
 

@@ -15,14 +15,14 @@ export default class Profile extends Component {
   };
 
   componentDidMount() {
-    if (document.cookie)  
+    
       AUTH_SERVICE.getUser()
         .then(({ data }) => {
           this.setState({ currentUser: data.user });
         })
         .catch(err => console.log(err));
   }
-  
+
   render() {
     return (
       <MyContext.Consumer>
