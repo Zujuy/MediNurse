@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyledForms } from '../../style/Components';
+import { StyledForms } from '../../style/components';
 import { MyContext } from '../../context';
 import PATIENT_SERVICE from '../../services/patientsService';
 
@@ -26,21 +26,20 @@ export default class PatientForm extends Component {
       weight: '',
       height: '',
       medicAsigned: '',
-      nurseAsigned: ''
+      nurseAsigned: '',
     },
-    userAbailables: [{}]
+    userAbailables: [{}],
   };
 
   componentDidMount() {
-    
-      PATIENT_SERVICE.getMedicsAndNurses()
-        .then(({ data }) => {
-          this.setState({ userAbailables: data });
-        })
-        .catch(err => console.log(err));
+    PATIENT_SERVICE.getMedicsAndNurses()
+      .then(({ data }) => {
+        this.setState({ userAbailables: data });
+      })
+      .catch((err) => console.log(err));
   }
 
-  handleCreatePatient = async e => {
+  handleCreatePatient = async (e) => {
     e.preventDefault();
     const { patientForm } = this.state;
     const formDataP = new FormData();
@@ -73,8 +72,8 @@ export default class PatientForm extends Component {
         height: '',
         nationality: '',
         medicAsigned: '',
-        nurseAsigned: ''
-      }
+        nurseAsigned: '',
+      },
     });
   };
 
@@ -83,19 +82,19 @@ export default class PatientForm extends Component {
       ...this.state,
       patientForm: {
         ...this.state.patientForm,
-        [name]: value
-      }
+        [name]: value,
+      },
     });
   };
 
-  handleFile = e => {
+  handleFile = (e) => {
     this.setState({ file: e.target.files[0] });
   };
 
   render() {
     let medics = [];
     let nurses = [];
-    this.state.userAbailables.forEach(e => {
+    this.state.userAbailables.forEach((e) => {
       if (e.role === 'Medico') {
         medics.push(e);
       } else {
@@ -116,9 +115,9 @@ export default class PatientForm extends Component {
 
     return (
       <MyContext.Consumer>
-        {context => (
+        {(context) => (
           <form
-            onSubmit={e => {
+            onSubmit={(e) => {
               this.handleCreatePatient(e);
               this.props.history.push('/profile');
             }}

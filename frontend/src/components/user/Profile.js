@@ -3,28 +3,28 @@ import {
   StyledProfile,
   StyledNurse,
   Carousel,
-  StyledCard
-} from '../../style/Components';
+  StyledCard,
+} from '../../style/components';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../context';
-import AUTH_SERVICE from '../../services/AuthService';
+import AUTH_SERVICE from '../../services/authService';
 
 export default class Profile extends Component {
   state = {
-    currentUser: {}
+    currentUser: {},
   };
 
   componentDidMount() {
-      AUTH_SERVICE.getUser()
-        .then(({ data }) => {
-          this.setState({ currentUser: data.user });
-        })
-        .catch(err => console.log(err));
+    AUTH_SERVICE.getUser()
+      .then(({ data }) => {
+        this.setState({ currentUser: data.user });
+      })
+      .catch((err) => console.log(err));
   }
   render() {
     return (
       <MyContext.Consumer>
-        {context => {
+        {(context) => {
           return (
             <StyledProfile>
               <div className="containerprofile">
@@ -53,7 +53,7 @@ export default class Profile extends Component {
                 <br></br>
                 {this.state.currentUser.role === 'Asistente medica' && (
                   <Link style={{ textDecoration: 'none' }} to="/home">
-                   <h4>Crear cita médica</h4> 
+                    <h4>Crear cita médica</h4>
                   </Link>
                 )}
 
@@ -83,7 +83,7 @@ export default class Profile extends Component {
                     style={{ textDecoration: 'none' }}
                     to="/patientsasigned"
                   >
-                   <h4>Ver pacientes</h4> 
+                    <h4>Ver pacientes</h4>
                   </Link>
                 )}
 
@@ -92,7 +92,7 @@ export default class Profile extends Component {
                     style={{ textDecoration: 'none' }}
                     to="/patientsAsigned"
                   >
-                   <h4>Ver pacientes</h4>
+                    <h4>Ver pacientes</h4>
                   </Link>
                 )}
               </div>

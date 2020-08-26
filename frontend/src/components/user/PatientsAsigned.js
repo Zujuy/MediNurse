@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyledPatients, StyledCard, Carousel } from '../../style/Components';
+import { StyledPatients, StyledCard, Carousel } from '../../style/components';
 import PatientCards from '../../components/patient/PatientCards';
 import PATIENT_SERVICE from '../../services/patientsService';
 
@@ -8,16 +8,16 @@ export default class PatientsAsigned extends Component {
     super(props);
   }
   state = {
-    patients: [{}]
+    patients: [{}],
   };
 
   componentDidMount() {
-      PATIENT_SERVICE.getPatientsAsigned()
-        .then(({ data }) => {
-          this.setState({ patients: data.patientsAsigned });
-          console.log(this.state.patients);
-        })
-        .catch(err => console.log(err));
+    PATIENT_SERVICE.getPatientsAsigned()
+      .then(({ data }) => {
+        this.setState({ patients: data.patientsAsigned });
+        console.log(this.state.patients);
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -25,7 +25,7 @@ export default class PatientsAsigned extends Component {
       return null;
     }
     let asignedPatients = [];
-    this.state.patients.forEach(e => {
+    this.state.patients.forEach((e) => {
       asignedPatients.push(e);
     });
 
@@ -44,9 +44,7 @@ export default class PatientsAsigned extends Component {
         <h2>Pacientes Asignados</h2>
         <div className="allpatients">
           <StyledCard>
-            <Carousel>
-              {cardPatient}
-            </Carousel>
+            <Carousel>{cardPatient}</Carousel>
           </StyledCard>
         </div>
       </StyledPatients>

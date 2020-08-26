@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react';
-import AUTH_SERVICE from './services/AuthService';
+import AUTH_SERVICE from './services/authService';
 import Swal from 'sweetalert2';
 import PatientService from './services/patientsService';
 import axios from 'axios';
@@ -12,7 +12,7 @@ class MyProvider extends Component {
 
     loginForm: {
       email: '',
-      password: ''
+      password: '',
     },
     currentUser: {},
 
@@ -35,18 +35,17 @@ class MyProvider extends Component {
       alergies: '',
       weight: '',
       height: '',
-      userAsigned: ''
-    }
+      userAsigned: '',
+    },
   };
 
   componentDidMount() {
-    
-      AUTH_SERVICE.getUser()
-        .then(({ data }) => {
-          this.setState({ loggedUser: true, currentUser: data.user });
-          Swal.fire(`Welcome back ${data.user.name} `, '', 'success');
-        })
-        .catch(err => console.log(err));
+    AUTH_SERVICE.getUser()
+      .then(({ data }) => {
+        this.setState({ loggedUser: true, currentUser: data.user });
+        Swal.fire(`Welcome back ${data.user.name} `, '', 'success');
+      })
+      .catch((err) => console.log(err));
   }
 
   handleInput = (e, obj) => {
@@ -56,7 +55,7 @@ class MyProvider extends Component {
     this.setState({ obj: a });
   };
 
-  handleFile = e => {
+  handleFile = (e) => {
     this.setState({ file: e.target.files[0] });
   };
 
@@ -67,26 +66,25 @@ class MyProvider extends Component {
         this.setState({ loggedUser: true, user: data.user });
         cb();
       })
-      .catch(err => {
+      .catch((err) => {
         Swal.fire(`Hay un error`, 'verifica tu información');
       });
   };
 
-  handleLogout = async cb => {
+  handleLogout = async (cb) => {
     await AUTH_SERVICE.logout();
     window.localStorage.clear();
     this.setState({ loggedUser: false, user: {} });
     cb();
   };
 
-  handleCreatePatient = async e => {
+  handleCreatePatient = async (e) => {
     e.preventDefault();
     const { data } = await PatientService.createPatient(this.state.patientForm);
     Swal.fire(`Patient ${data.user.name} created`, '', 'success');
   };
 
   render() {
-    
     return (
       <MyContext.Provider
         value={{
@@ -99,7 +97,7 @@ class MyProvider extends Component {
           patientForm: this.state.patientForm,
           handleCreatePatient: this.handleCreatePatient,
           handleFile: this.handleFile,
-          handleSubmit: this.handleSubmit
+          handleSubmit: this.handleSubmit,
         }}
       >
         {this.props.children}

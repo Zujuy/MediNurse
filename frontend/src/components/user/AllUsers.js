@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyledAll, StyledCard, Carousel } from '../../style/Components';
+import { StyledAll, StyledCard, Carousel } from '../../style/components';
 import Cards from '../../components/organicComponents/Cards';
 
 export default function Allusers() {

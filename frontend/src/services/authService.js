@@ -1,17 +1,21 @@
 import axios from 'axios';
 
-const baseURL = 'https://ancient-atoll-83528.herokuapp.com';
+let baseURL;
+
+process.env.NODE_ENV === 'production'
+  ? (baseURL = 'https://ancient-atoll-83528.herokuapp.com')
+  : (baseURL = 'http://localhost:3000');
 
 const service = axios.create({
   baseURL,
-  withCredentials: true
+  withCredentials: true,
 });
 
 const AUTH_SERVICE = {
-  signup: data => {
+  signup: (data) => {
     return service.post('/api/auth/signup', data);
   },
-  login: data => {
+  login: (data) => {
     return service.post('/api/auth/login', data);
   },
   getUser: () => {
@@ -19,7 +23,7 @@ const AUTH_SERVICE = {
   },
   logout: () => {
     return service.get('/api/auth/logout');
-  }
+  },
 };
 
 export default AUTH_SERVICE;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyledPatientprofile } from '../../style/Components';
+import { StyledPatientprofile } from '../../style/components';
 import { Link } from 'react-router-dom';
 
 export default function Profile() {

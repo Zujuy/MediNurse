@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { StyledNavbar } from '../../style/Components';
+import { StyledNavbar } from '../../style/components';
 import { MyContext } from '../../context';
 import { withRouter } from 'react-router-dom';
 
 function Navbar(props) {
   return (
     <MyContext.Consumer>
-      {context => {
+      {(context) => {
         return (
           <StyledNavbar>
             <Link to="/home">

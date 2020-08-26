@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledHome } from '../style/Components';
+import { StyledHome } from '../style/components';
 import Carousel from '../components/homeComponents/Carousel';
 
 export default function Home() {

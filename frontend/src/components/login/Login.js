@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyledForms } from '../../style/Components';
+import { StyledForms } from '../../style/components';
 import { MyContext } from '../../context';
 
 export default class Login extends Component {
@@ -12,16 +12,16 @@ export default class Login extends Component {
   render() {
     return (
       <MyContext.Consumer>
-        {context => (
+        {(context) => (
           <form
-            onSubmit={e => {
+            onSubmit={(e) => {
               context.handleLogin(e, () => {
                 this.props.history.push('/profile');
               });
             }}
           >
             <StyledForms>
-            <h2>Login</h2>
+              <h2>Login</h2>
               <div className="formstyle">
                 <div>
                   <label htmlFor="email">Mail de usuario</label>
@@ -30,7 +30,7 @@ export default class Login extends Component {
                     placeholder="Mail de usuario"
                     type="email"
                     value={context.loginForm.email}
-                    onChange={e => context.handleInput(e, 'loginForm')}
+                    onChange={(e) => context.handleInput(e, 'loginForm')}
                     required
                   />
                 </div>
@@ -42,7 +42,7 @@ export default class Login extends Component {
                     type="password"
                     placeholder="Password"
                     value={context.loginForm.password}
-                    onChange={e => context.handleInput(e, 'loginForm')}
+                    onChange={(e) => context.handleInput(e, 'loginForm')}
                     required
                   />
                 </div>

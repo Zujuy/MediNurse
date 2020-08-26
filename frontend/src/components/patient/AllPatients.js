@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { StyledPatients, StyledCard, Carousel } from '../../style/Components';
+import { StyledPatients, StyledCard, Carousel } from '../../style/components';
 import PatientCards from './PatientCards';
-
 
 export default function AllPatients() {
   return (
@@ -21,7 +20,6 @@ export default function AllPatients() {
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
             <PatientCards></PatientCards>
-          
           </Carousel>
         </StyledCard>
       </div>

@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
-import { StyledForms } from '../../style/Components';
+import { StyledForms } from '../../style/components';
 import { MyContext } from '../../context';
-import AUTH_SERVICE from '../../services/AuthService';
+import AUTH_SERVICE from '../../services/authService';
 import Swal from 'sweetalert2';
 
 export default class Signup extends Component {
@@ -18,11 +18,11 @@ export default class Signup extends Component {
       identification_card: '',
       enrollment: '',
       email: '',
-      password: ''
-    }
+      password: '',
+    },
   };
 
-  handleSignup = async e => {
+  handleSignup = async (e) => {
     e.preventDefault();
     const { formSignup } = this.state;
     const formData = new FormData();
@@ -48,8 +48,8 @@ export default class Signup extends Component {
         identification_card: '',
         enrollment: '',
         email: '',
-        password: ''
-      }
+        password: '',
+      },
     });
   };
 
@@ -58,21 +58,21 @@ export default class Signup extends Component {
       ...this.state,
       formSignup: {
         ...this.state.formSignup,
-        [name]: value
-      }
+        [name]: value,
+      },
     });
   };
 
-  handleFile = e => {
+  handleFile = (e) => {
     this.setState({ file: e.target.files[0] });
   };
 
   render() {
     return (
       <MyContext.Consumer>
-        {context => (
+        {(context) => (
           <form
-            onSubmit={e => {
+            onSubmit={(e) => {
               this.handleSignup(e);
               this.props.history.push('/login');
             }}
